@@ -60,22 +60,29 @@ def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel
         spectrums = spectrums.permute(1,2,0)
     return spectrums
 
+def getLabel(os.path.join(self.data_folder,file_name)):
+
+
 class TUTDataset(data.Dataset):
     '''
     TUT audio dataset
     '''
-    def __init__(self, data_folder):
+    def __init__(self, data_folder,label_folder):
         '''
         Args:
-            data_folder: the path where audio files are stored in
+            data_folder: the path where audio files stored in
+            label_folder: the path where label files stored in
         '''
         super(TUTDataset).__init__()
         self.data_folder = data_folder
+        self.label_folder = label_folder
         self.file_names = list(os.listdir(data_folder))
+        self.label_names = list(os.listdir(label_folder))
 
     def __getitem__(self,index):
         file_name = self.file_names[index]
-        return getDFTFeature(os.path.join(self.data_folder,file_name))
+        label_name = file_name.replace('.wav','.csv')
+        return getDFTFeature(os.path.join(self.data_folder,file_name)), getLabel(os.path.join(self.label_folder,label_name))
 
     def __len__(self):
         return len(self.file_names)
