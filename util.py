@@ -6,6 +6,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import csv
+
 def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5000):
     '''
     获取一个音频的对数DFT频谱
@@ -60,14 +62,13 @@ def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel
         spectrums = spectrums.permute(1,2,0)
     return spectrums
 
-def getLabel(os.path.join(self.data_folder,file_name)):
 
 
 class TUTDataset(data.Dataset):
     '''
     TUT audio dataset
     '''
-    def __init__(self, data_folder,label_folder):
+    def __init__(self, data_folder,label_folder,sample_freq=44100):
         '''
         Args:
             data_folder: the path where audio files stored in
@@ -78,17 +79,75 @@ class TUTDataset(data.Dataset):
         self.label_folder = label_folder
         self.file_names = list(os.listdir(data_folder))
         self.label_names = list(os.listdir(label_folder))
+        self.sample_freq = sample_freq
+
+        self.name2idx, self.idx2name = self.getAllEvents()
+        self.num_class = len(self.idx2name)
 
     def __getitem__(self,index):
+        '''get a data sample
+        Args: 
+            index: the index
+        Return:
+            (sample_data,sample_sed_label,sample_doa_label):
+                sample_data: 2C x N x F matrix, C is the number of channels, N is time points, F is frequency bins.
+                sample_sed_label: N-dim vector, the class of sound event
+                sample_doa_label: N x 3K matrix,  the position of sound event (at unit circle), the final dimension is like (x0,y0,z0,x1,y1,z1,...)
+        '''
         file_name = self.file_names[index]
         label_name = file_name.replace('.wav','.csv')
-        return getDFTFeature(os.path.join(self.data_folder,file_name)), getLabel(os.path.join(self.label_folder,label_name))
+        feature = getDFTFeature(os.path.join(self.data_folder,file_name))
+        label = self.getLabel(os.path.join(self.label_folder,label_name))
+        print(label[0])
+        return feature,torch.tensor(label[0]),torch.tensor(label[1])
 
+    def getAllEvents(self):
+        event_set = set([])
+        for filename in os.listdir(self.label_folder):
+            if '.csv' in filename:
+                with open(os.path.join(self.label_folder,filename),'r') as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        event_set.add(row['sound_event_recording'])
+        return {v:k for k,v in enumerate(event_set)},list(event_set)
+
+
+    def getLabel(self,filepath):
+        sed = np.zeros(5000)
+        doa = np.zeros((5000,self.num_class*3))
+        with open(filepath,'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                name = row['sound_event_recording']
+                idx = self.name2idx[name]
+                start = float(row['start_time'])
+                end = float(row['end_time'])
+                sp = int(start*self.sample_freq)
+                if sp<1024:
+                    sp = 0
+                else:
+                    sp = (sp-1024)//512+1
+                ep = int(end*self.sample_freq)
+                if ep<1024:
+                    ep = 0
+                else:
+                    ep = (ep-1024)//512+1
+                ele = float(row['ele'])*np.pi/180
+                azi = float(row['azi'])*np.pi/180
+
+                sed[sp:ep] = idx
+                # print(idx)
+                # print(doa[sp:ep,idx*3:(idx*3+3)])
+                doa[sp:ep,idx*3:(idx*3+3)] = np.array([[np.cos(ele)*np.cos(azi),np.cos(ele)*np.sin(azi),np.sin(ele)]])
+
+        return (sed,doa)
     def __len__(self):
         return len(self.file_names)
 
 if __name__ == "__main__":
-    tutdata = TUTDataset("data/mic_dev")
-    loader = data.DataLoader(tutdata,batch_size=8)
-    for v in loader:
+    tutdata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100)
+    d = tutdata[0]
+    loader = data.DataLoader(d,batch_size=1)
+    for v,s,d in loader:
         print(v.shape)
+        break
