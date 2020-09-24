@@ -8,7 +8,7 @@ import numpy as np
 import os
 import csv
 
-def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5000):
+def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5160):
     '''
     获取一个音频的对数DFT频谱
     
@@ -68,7 +68,7 @@ class TUTDataset(data.Dataset):
     '''
     TUT audio dataset
     '''
-    def __init__(self, data_folder,label_folder,sample_freq=44100):
+    def __init__(self, data_folder,label_folder,sample_freq=44100,split_set=["split1"],ir_set=["ir0"],ov_set=["ov1"],cut_len=5160):
         '''
         Args:
             data_folder: the path where audio files stored in
@@ -78,8 +78,18 @@ class TUTDataset(data.Dataset):
         self.data_folder = data_folder
         self.label_folder = label_folder
         self.file_names = list(os.listdir(data_folder))
-        self.label_names = list(os.listdir(label_folder))
         self.sample_freq = sample_freq
+        self.cut_len = cut_len
+        
+        # choose target set
+        self.split_set = set(split_set) 
+        self.ir_set = set(ir_set)
+        self.ov_set = set(ov_set)
+        self.file_names = [name for name in self.file_names 
+                            if (set(name.split("_"))&self.split_set 
+                            and set(name.split("_"))&self.ir_set
+                            and set(name.split("_"))&self.ov_set)]
+
 
         self.name2idx, self.idx2name = self.getAllEvents()
         self.num_class = len(self.idx2name)
@@ -98,8 +108,7 @@ class TUTDataset(data.Dataset):
         label_name = file_name.replace('.wav','.csv')
         feature = getDFTFeature(os.path.join(self.data_folder,file_name))
         label = self.getLabel(os.path.join(self.label_folder,label_name))
-        print(label[0])
-        return feature,torch.tensor(label[0]),torch.tensor(label[1])
+        return feature,torch.LongTensor(label[0]),torch.tensor(label[1])
 
     def getAllEvents(self):
         event_set = set([])
@@ -113,8 +122,8 @@ class TUTDataset(data.Dataset):
 
 
     def getLabel(self,filepath):
-        sed = np.zeros(5000)
-        doa = np.zeros((5000,self.num_class*3))
+        sed = np.zeros(self.cut_len)
+        doa = np.zeros((self.cut_len,self.num_class*3))
         with open(filepath,'r') as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -136,8 +145,6 @@ class TUTDataset(data.Dataset):
                 azi = float(row['azi'])*np.pi/180
 
                 sed[sp:ep] = idx
-                # print(idx)
-                # print(doa[sp:ep,idx*3:(idx*3+3)])
                 doa[sp:ep,idx*3:(idx*3+3)] = np.array([[np.cos(ele)*np.cos(azi),np.cos(ele)*np.sin(azi),np.sin(ele)]])
 
         return (sed,doa)
@@ -146,8 +153,6 @@ class TUTDataset(data.Dataset):
 
 if __name__ == "__main__":
     tutdata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100)
-    d = tutdata[0]
-    loader = data.DataLoader(d,batch_size=1)
-    for v,s,d in loader:
+    loader = data.DataLoader(tutdata,batch_size=8,shuffle=False)
+    for v,k,d in loader:
         print(v.shape)
-        break
