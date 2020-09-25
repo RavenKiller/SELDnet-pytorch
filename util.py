@@ -73,6 +73,11 @@ class TUTDataset(data.Dataset):
         Args:
             data_folder: the path where audio files stored in
             label_folder: the path where label files stored in
+            sample_freq: the sample frequency of audios
+            split_set: a list, containing the split sets to be loaded
+            ir_set: a list, containing the ir sets to be loaded
+            ov_set: a list, containing the ov sets to be loaded
+            cut_len: the length of feature in time axis
         '''
         super(TUTDataset).__init__()
         self.data_folder = data_folder
@@ -108,9 +113,15 @@ class TUTDataset(data.Dataset):
         label_name = file_name.replace('.wav','.csv')
         feature = getDFTFeature(os.path.join(self.data_folder,file_name))
         label = self.getLabel(os.path.join(self.label_folder,label_name))
+        if(feature.shape[1]<5160):
+            feature = torch.cat((feature,torch.zeros(feature.shape[0],5160-feature.shape[1],feature.shape[2])),dim=1)
         return feature,torch.LongTensor(label[0]),torch.tensor(label[1])
 
     def getAllEvents(self):
+        '''get all event labels
+        Return:
+            (label2idx,idx2label):
+        '''
         event_set = set([])
         for filename in os.listdir(self.label_folder):
             if '.csv' in filename:
@@ -120,7 +131,10 @@ class TUTDataset(data.Dataset):
                         event_set.add(row['sound_event_recording'])
         return {v:k for k,v in enumerate(event_set)},list(event_set)
 
+    def decode(self,sed_tensor,doa_tensor):
+        all_events = []
 
+        return all_events
     def getLabel(self,filepath):
         sed = np.zeros(self.cut_len)
         doa = np.zeros((self.cut_len,self.num_class*3))

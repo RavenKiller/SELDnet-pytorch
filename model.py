@@ -69,8 +69,8 @@ class SELDNet(nn.Module):
 
         y = y.permute(0,2,3,1) # shape(N,T,2,P)
         y = y.contiguous().view(y.shape[0],y.shape[1],-1) # shape (N,T,2*P)
-        h0 = torch.rand((2*self.rnn_layers,y.shape[0],self.Q))
-        y, _ = self.grus(y,h0) # shape(N,T,2*Q)
+        # h0 = torch.rand((2*self.rnn_layers,y.shape[0],self.Q)).cuda()
+        y, _ = self.grus(y) # shape(N,T,2*Q)
         y = torch.tanh(y) # shape(N,T,2*Q)
 
         sed_y = torch.sigmoid(self.sed_fc1(self.sed_fc0(y)))
