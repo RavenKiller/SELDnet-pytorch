@@ -12,6 +12,7 @@ from model import SELDNet
 import argparse
 import sys
 import os
+from pprint import pprint
 
 IR_SET = ["ir0","ir1","ir2","ir3","ir4"]
 SPLIT_SET = ["split4"]
@@ -52,10 +53,23 @@ def test(args):
         test_loss_sum+=float(loss)
         steps+=1
     print("test loss is {}".format(test_loss_sum/steps))
+def test_decode():
+    tutdata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100,split_set=SPLIT_SET,ir_set=IR_SET,ov_set=OV_SET)
+    print(tutdata.file_names[0])
+    sample,sed,doa = tutdata[0]
+    sed_onehot = torch.zeros((sed.shape[0],tutdata.num_class))
+    print(sed)
+    print(set(list(sed.numpy())))
+    print(tutdata.name2idx)
+    for k,v in enumerate(sed):
+        sed_onehot[k,v] = 1
+    res = tutdata.decode_one(sed_onehot,doa)
+    pprint(res)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='SELDNet params')
     parser.add_argument('--batch_size', type=int,default=4,help='The batch size')
     args = parser.parse_args()
-    test(args)
+    test_decode()
 
 

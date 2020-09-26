@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import csv
-
+import math
 def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5160):
     '''
     获取一个音频的对数DFT频谱
@@ -97,7 +97,12 @@ class TUTDataset(data.Dataset):
 
 
         self.name2idx, self.idx2name = self.getAllEvents()
+        self.name2idx['silence'] = 0
+        self.idx2name.insert(0,'silence')
         self.num_class = len(self.idx2name)
+
+        self.frame_len = 1024
+        self.frame_shift = 512
 
     def __getitem__(self,index):
         '''get a data sample
@@ -120,7 +125,9 @@ class TUTDataset(data.Dataset):
     def getAllEvents(self):
         '''get all event labels
         Return:
-            (label2idx,idx2label):
+            (label2idx,idx2label)
+                label2idx: a dict to convert event name to index. events count froim 1
+                idx2label: a list to convert index to event name. 0 is corresponding to silence
         '''
         event_set = set([])
         for filename in os.listdir(self.label_folder):
@@ -129,13 +136,91 @@ class TUTDataset(data.Dataset):
                     reader = csv.DictReader(f)
                     for row in reader:
                         event_set.add(row['sound_event_recording'])
-        return {v:k for k,v in enumerate(event_set)},list(event_set)
+        return {v:(k+1) for k,v in enumerate(event_set)},list(event_set)
 
-    def decode(self,sed_tensor,doa_tensor):
+    def decode_one(self,sed_tensor,doa_tensor):
+        '''decode information of predict output
+        Args:
+            sed_tensor: a tensor of predict SED
+            doa_tensor: a tensor of predict DOA
+        Return:
+            all_events: a list of all events, every element is a dict storing name, start, end, ele, azi, etc. of a event.
+        '''
+        sed_tensor = sed_tensor.numpy()
+        doa_tensor = doa_tensor.numpy()
         all_events = []
-
+        current_idx = set([])
+        onset = {}
+        N = sed_tensor.shape[0]
+        K = sed_tensor.shape[1]
+        for i in range(N):
+            # print(sed_tensor[i,:])
+            idx = set(np.where(sed_tensor[i,:]>0.5)[0])
+            if 0 in idx:
+                continue
+            # open new events
+            for v in idx:
+                if v not in current_idx:
+                    current_idx.add(v)
+                    onset[v] = i
+            # close old events
+            tmp = current_idx.copy()
+            for v in current_idx:
+                if v not in idx:
+                    tmp.remove(v)
+                    startp = onset.pop(v)
+                    endp = i
+                    start = ((startp-1)*self.frame_shift+self.frame_len)/self.sample_freq
+                    end = ((endp-1)*self.frame_shift+self.frame_len)/self.sample_freq
+                    x = np.mean(doa_tensor[startp:endp,v*3])
+                    y = np.mean(doa_tensor[startp:endp,v*3+1])
+                    z = np.mean(doa_tensor[startp:endp,v*3+2])
+                    r = math.sqrt(x*x+y*y+z*z)
+                    if r<1e-5:
+                        ele=0
+                        azi=0
+                    else:
+                        ele = math.asin(z/r)
+                        azi = math.acos(max(min(x/(r*math.cos(ele)),1),-1))
+                        if y<0:
+                            azi = -azi
+                    all_events.append({
+                        "idx":v,
+                        "event":self.idx2name[v],
+                        "start":start,
+                        "end":end,
+                        "x":x,
+                        "y":y,
+                        "z":z,
+                        "ele":ele*180/math.pi,
+                        "azi":azi*180/math.pi
+                    })
+                    # print(sed_tensor[i,:])
+                    # print(idx)
+                    # print({
+                    #     "idx":v,
+                    #     "event":self.idx2name[v],
+                    #     "start":start,
+                    #     "end":end,
+                    #     "x":x,
+                    #     "y":y,
+                    #     "z":z,
+                    #     "ele":ele*180/math.pi,
+                    #     "azi":azi*180/math.pi
+                    # })
+            current_idx = tmp
         return all_events
+    
     def getLabel(self,filepath):
+        '''get label information from a csv file
+        Args:
+            filepath: the relative file path
+        Return:
+            (sed, doa)
+                sed: N x (num_class+1) matrix. every row is a one hot vector
+                doa: N x (num_class+1)*3 matrix. every row is positions of all possible events, like (x0,y0,z0,x1,y1,z1,...)
+
+        '''
         sed = np.zeros(self.cut_len)
         doa = np.zeros((self.cut_len,self.num_class*3))
         with open(filepath,'r') as f:
