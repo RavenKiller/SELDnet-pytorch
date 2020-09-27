@@ -141,8 +141,8 @@ class TUTDataset(data.Dataset):
     def decode_one(self,sed_tensor,doa_tensor):
         '''decode information of predict output
         Args:
-            sed_tensor: a tensor of predict SED
-            doa_tensor: a tensor of predict DOA
+            sed_tensor: a tensor of predict SED, size T x num_class+1
+            doa_tensor: a tensor of predict DOA, size T x (num_class+1)*3
         Return:
             all_events: a list of all events, every element is a dict storing name, start, end, ele, azi, etc. of a event.
         '''
@@ -156,8 +156,6 @@ class TUTDataset(data.Dataset):
         for i in range(N):
             # print(sed_tensor[i,:])
             idx = set(np.where(sed_tensor[i,:]>0.5)[0])
-            if 0 in idx:
-                continue
             # open new events
             for v in idx:
                 if v not in current_idx:
@@ -195,20 +193,10 @@ class TUTDataset(data.Dataset):
                         "ele":ele*180/math.pi,
                         "azi":azi*180/math.pi
                     })
-                    # print(sed_tensor[i,:])
-                    # print(idx)
-                    # print({
-                    #     "idx":v,
-                    #     "event":self.idx2name[v],
-                    #     "start":start,
-                    #     "end":end,
-                    #     "x":x,
-                    #     "y":y,
-                    #     "z":z,
-                    #     "ele":ele*180/math.pi,
-                    #     "azi":azi*180/math.pi
-                    # })
             current_idx = tmp
+        # events continuing to audio end
+        i = N
+        
         return all_events
     
     def getLabel(self,filepath):

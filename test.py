@@ -14,6 +14,11 @@ import sys
 import os
 from pprint import pprint
 
+# test tensorboardX
+from tensorboardX import SummaryWriter
+dummy_input = (torch.zeros(4,8, 5000, 512),)
+
+
 IR_SET = ["ir0","ir1","ir2","ir3","ir4"]
 SPLIT_SET = ["split4"]
 OV_SET = ["ov1"]
@@ -33,6 +38,12 @@ def test(args):
 
 
     model = SELDNet(K=tutdata.num_class)
+
+    # test tensorboardX
+    with SummaryWriter(comment='SELDNet') as w:
+        print(w)
+        w.add_graph(model, dummy_input)
+
     model.load_state_dict(torch.load("SELDNet-best.ckpt"))
     model.to(device)
     model.eval()
@@ -53,7 +64,7 @@ def test(args):
         test_loss_sum+=float(loss)
         steps+=1
     print("test loss is {}".format(test_loss_sum/steps))
-def test_decode():
+def test_decode(args):
     tutdata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100,split_set=SPLIT_SET,ir_set=IR_SET,ov_set=OV_SET)
     print(tutdata.file_names[0])
     sample,sed,doa = tutdata[0]
@@ -70,6 +81,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='SELDNet params')
     parser.add_argument('--batch_size', type=int,default=4,help='The batch size')
     args = parser.parse_args()
-    test_decode()
+    test(args)
 
 

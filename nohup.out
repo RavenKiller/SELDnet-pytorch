@@ -1,0 +1,3166 @@
+usage: train.py [-h] [--epoch_num EPOCH_NUM] [--batch_size BATCH_SIZE]
+train.py: error: unrecognized arguments: --batch-size 4
+SELDNet(
+  (conv0): Conv2d(8, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn0): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (grus): GRU(32, 16, num_layers=2, batch_first=True, bidirectional=True)
+  (sed_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (sed_fc1): Linear(in_features=16, out_features=12, bias=True)
+  (doa_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (doa_fc1): Linear(in_features=16, out_features=36, bias=True)
+)
+steps 0
+train loss: 0.5105538844530182, evaluation loss: 2.550897836840291
+saveing model...
+steps 1
+steps 2
+steps 3
+steps 4
+steps 5
+train loss: 2.4872754737957967, evaluation loss: 2.50730011501878
+saveing model...
+steps 6
+steps 7
+steps 8
+steps 9
+steps 10
+train loss: 2.444431043698953, evaluation loss: 2.454534548796146
+saveing model...
+steps 11
+steps 12
+steps 13
+steps 14
+steps 15
+train loss: 2.4045404070280427, evaluation loss: 2.383211785914541
+saveing model...
+steps 16
+steps 17
+steps 18
+steps 19
+steps 20
+train loss: 2.367870289636248, evaluation loss: 2.354527170290484
+saveing model...
+steps 21
+steps 22
+steps 23
+steps 24
+steps 25
+train loss: 2.338823431651935, evaluation loss: 2.3310995743567946
+saveing model...
+steps 26
+steps 27
+steps 28
+steps 29
+steps 30
+train loss: 2.3182961661796, evaluation loss: 2.3152154370650586
+saveing model...
+steps 31
+steps 32
+steps 33
+steps 34
+steps 35
+train loss: 2.3021266581183566, evaluation loss: 2.303687611942386
+saveing model...
+steps 36
+steps 37
+steps 38
+steps 39
+steps 40
+train loss: 2.2701371414376417, evaluation loss: 2.2861362120953395
+saveing model...
+steps 41
+steps 42
+steps 43
+steps 44
+steps 45
+train loss: 2.2639236787349573, evaluation loss: 2.267808498899738
+saveing model...
+steps 46
+steps 47
+steps 48
+steps 49
+steps 50
+train loss: 2.247014559217747, evaluation loss: 2.2505697199404002
+saveing model...
+steps 51
+steps 52
+steps 53
+steps 54
+steps 55
+train loss: 2.2320318960938517, evaluation loss: 2.2375597619233836
+saveing model...
+steps 56
+steps 57
+steps 58
+steps 59
+steps 60
+train loss: 2.218456948979582, evaluation loss: 2.2279095521433
+saveing model...
+steps 61
+steps 62
+steps 63
+steps 64
+steps 65
+train loss: 2.212222850733421, evaluation loss: 2.21942066806069
+saveing model...
+steps 66
+steps 67
+steps 68
+steps 69
+steps 70
+train loss: 2.2148603831892992, evaluation loss: 2.21211232093963
+saveing model...
+steps 71
+steps 72
+steps 73
+steps 74
+steps 75
+train loss: 2.185479415957144, evaluation loss: 2.2062057684072114
+saveing model...
+steps 76
+steps 77
+steps 78
+steps 79
+steps 80
+train loss: 2.1838341245231954, evaluation loss: 2.2011490159439004
+saveing model...
+steps 81
+steps 82
+steps 83
+steps 84
+steps 85
+train loss: 2.1873266414002623, evaluation loss: 2.197022496004028
+saveing model...
+steps 86
+steps 87
+steps 88
+steps 89
+steps 90
+train loss: 2.18298701428174, evaluation loss: 2.193615142836628
+saveing model...
+steps 91
+steps 92
+steps 93
+steps 94
+steps 95
+train loss: 2.1748307773810143, evaluation loss: 2.1911873352707296
+saveing model...
+steps 96
+steps 97
+steps 98
+steps 99
+steps 100
+train loss: 2.1628867623461145, evaluation loss: 2.188498872791877
+saveing model...
+steps 101
+steps 102
+steps 103
+steps 104
+steps 105
+train loss: 2.1663245841175205, evaluation loss: 2.185589217235146
+saveing model...
+steps 106
+steps 107
+steps 108
+steps 109
+steps 110
+train loss: 2.168789201698139, evaluation loss: 2.1828976968440617
+saveing model...
+steps 111
+steps 112
+steps 113
+steps 114
+steps 115
+train loss: 2.164013975505317, evaluation loss: 2.1812391314093222
+saveing model...
+steps 116
+steps 117
+steps 118
+steps 119
+steps 120
+train loss: 2.168088711635385, evaluation loss: 2.1804239300695896
+saveing model...
+steps 121
+steps 122
+steps 123
+steps 124
+steps 125
+train loss: 2.1693818011716997, evaluation loss: 2.18004381205685
+saveing model...
+steps 126
+steps 127
+steps 128
+steps 129
+steps 130
+train loss: 2.1684088679216593, evaluation loss: 2.179505912008301
+saveing model...
+steps 131
+steps 132
+steps 133
+steps 134
+steps 135
+train loss: 2.166969925175697, evaluation loss: 2.1789283866151243
+saveing model...
+steps 136
+steps 137
+steps 138
+steps 139
+steps 140
+train loss: 2.1484182295143954, evaluation loss: 2.17819636490159
+saveing model...
+steps 141
+steps 142
+steps 143
+steps 144
+steps 145
+train loss: 2.1577808470457063, evaluation loss: 2.1774793370039625
+saveing model...
+steps 146
+steps 147
+steps 148
+steps 149
+steps 150
+train loss: 2.170842223618789, evaluation loss: 2.177343629689991
+saveing model...
+steps 151
+steps 152
+steps 153
+steps 154
+steps 155
+train loss: 2.1645717591680205, evaluation loss: 2.177666153958944
+steps 156
+steps 157
+steps 158
+steps 159
+steps 160
+train loss: 2.1497704832450886, evaluation loss: 2.1776964669090955
+steps 161
+steps 162
+steps 163
+steps 164
+steps 165
+train loss: 2.154060557342235, evaluation loss: 2.177484603799444
+steps 166
+steps 167
+steps 168
+steps 169
+steps 170
+train loss: 2.1716856070410464, evaluation loss: 2.177429488589567
+steps 171
+steps 172
+steps 173
+steps 174
+steps 175
+train loss: 2.162577913309258, evaluation loss: 2.1768656345098703
+saveing model...
+steps 176
+steps 177
+steps 178
+steps 179
+steps 180
+train loss: 2.144886584205145, evaluation loss: 2.1762120881206286
+saveing model...
+steps 181
+steps 182
+steps 183
+steps 184
+steps 185
+train loss: 2.1497579191404146, evaluation loss: 2.1751269375214077
+saveing model...
+steps 186
+steps 187
+steps 188
+steps 189
+steps 190
+train loss: 2.166023662999028, evaluation loss: 2.174691249709254
+saveing model...
+steps 191
+steps 192
+steps 193
+steps 194
+steps 195
+train loss: 2.160231605030041, evaluation loss: 2.174524378408316
+saveing model...
+steps 196
+steps 197
+steps 198
+steps 199
+steps 200
+train loss: 2.1653461136878946, evaluation loss: 2.174674648843413
+steps 201
+steps 202
+steps 203
+steps 204
+steps 205
+train loss: 2.1596190417463244, evaluation loss: 2.174843423349383
+steps 206
+steps 207
+steps 208
+steps 209
+steps 210
+train loss: 2.157587889850413, evaluation loss: 2.17486199571724
+steps 211
+steps 212
+steps 213
+steps 214
+steps 215
+train loss: 2.1497222288539795, evaluation loss: 2.174374243675331
+saveing model...
+steps 216
+steps 217
+steps 218
+steps 219
+steps 220
+train loss: 2.1636020877356827, evaluation loss: 2.1742274161427195
+saveing model...
+steps 221
+steps 222
+steps 223
+steps 224
+steps 225
+train loss: 2.1585105872144865, evaluation loss: 2.174314784866342
+steps 226
+steps 227
+steps 228
+steps 229
+steps 230
+train loss: 2.165062781838074, evaluation loss: 2.1748021762577956
+steps 231
+steps 232
+steps 233
+steps 234
+steps 235
+train loss: 2.150352687251171, evaluation loss: 2.1752705897994735
+steps 236
+steps 237
+steps 238
+steps 239
+steps 240
+train loss: 2.1590914581255016, evaluation loss: 2.1753094966378157
+steps 241
+steps 242
+steps 243
+steps 244
+steps 245
+train loss: 2.1552031811616055, evaluation loss: 2.1752115464405417
+steps 246
+steps 247
+steps 248
+steps 249
+steps 250
+train loss: 2.1531511909578134, evaluation loss: 2.1747527590700693
+steps 251
+steps 252
+steps 253
+steps 254
+steps 255
+train loss: 2.159532304073809, evaluation loss: 2.17449767084629
+steps 256
+steps 257
+steps 258
+steps 259
+steps 260
+train loss: 2.1464328748246126, evaluation loss: 2.174228100616842
+steps 261
+steps 262
+steps 263
+steps 264
+steps 265
+train loss: 2.156935114739212, evaluation loss: 2.1739314324063495
+saveing model...
+steps 266
+steps 267
+steps 268
+steps 269
+steps 270
+train loss: 2.1658835628344937, evaluation loss: 2.173873780704265
+saveing model...
+steps 271
+steps 272
+steps 273
+steps 274
+steps 275
+train loss: 2.1588002715053904, evaluation loss: 2.1737652106402896
+saveing model...
+steps 276
+steps 277
+steps 278
+steps 279
+steps 280
+train loss: 2.155567442397444, evaluation loss: 2.1736405009594515
+saveing model...
+steps 281
+steps 282
+steps 283
+steps 284
+steps 285
+train loss: 2.1724369099052105, evaluation loss: 2.1735424863588766
+saveing model...
+steps 286
+steps 287
+steps 288
+steps 289
+steps 290
+train loss: 2.14940287578491, evaluation loss: 2.1736637685993045
+steps 291
+steps 292
+steps 293
+steps 294
+steps 295
+train loss: 2.155534691891481, evaluation loss: 2.1738934855679553
+steps 296
+steps 297
+steps 298
+steps 299
+steps 300
+train loss: 2.15418260090191, evaluation loss: 2.173796065872442
+steps 301
+steps 302
+steps 303
+steps 304
+steps 305
+train loss: 2.1491733123923096, evaluation loss: 2.1736553055253425
+steps 306
+steps 307
+steps 308
+steps 309
+steps 310
+train loss: 2.154025808186753, evaluation loss: 2.173195805989835
+saveing model...
+steps 311
+steps 312
+steps 313
+steps 314
+steps 315
+train loss: 2.154087635965669, evaluation loss: 2.173005414848531
+saveing model...
+steps 316
+steps 317
+steps 318
+steps 319
+steps 320
+train loss: 2.1663508643044076, evaluation loss: 2.17324859368666
+steps 321
+steps 322
+steps 323
+steps 324
+steps 325
+train loss: 2.15006080653566, evaluation loss: 2.173523561800917
+steps 326
+steps 327
+steps 328
+steps 329
+steps 330
+train loss: 2.154830960035608, evaluation loss: 2.173708715094896
+steps 331
+steps 332
+steps 333
+steps 334
+steps 335
+train loss: 2.1474573496988745, evaluation loss: 2.173981684562977
+steps 336
+steps 337
+steps 338
+steps 339
+steps 340
+train loss: 2.1484630473828368, evaluation loss: 2.1737420775505183
+steps 341
+steps 342
+steps 343
+steps 344
+steps 345
+train loss: 2.1698652372599403, evaluation loss: 2.173572854431427
+steps 346
+steps 347
+steps 348
+steps 349
+steps 350
+train loss: 2.168765811165084, evaluation loss: 2.173560965891164
+steps 351
+steps 352
+steps 353
+steps 354
+steps 355
+train loss: 2.1539580126610915, evaluation loss: 2.1736270681427894
+steps 356
+steps 357
+steps 358
+steps 359
+steps 360
+train loss: 2.159578321075892, evaluation loss: 2.1736567276194823
+steps 361
+steps 362
+steps 363
+steps 364
+steps 365
+train loss: 2.152694804879951, evaluation loss: 2.173394963148061
+steps 366
+steps 367
+steps 368
+steps 369
+steps 370
+train loss: 2.1639500516382215, evaluation loss: 2.173480236774116
+steps 371
+steps 372
+steps 373
+steps 374
+steps 375
+train loss: 2.1461967076000343, evaluation loss: 2.173633717448171
+steps 376
+steps 377
+steps 378
+steps 379
+steps 380
+train loss: 2.162267335951275, evaluation loss: 2.1735454432223933
+steps 381
+steps 382
+steps 383
+steps 384
+steps 385
+train loss: 2.1595576754241117, evaluation loss: 2.1734864595882173
+steps 386
+steps 387
+steps 388
+steps 389
+steps 390
+train loss: 2.1506130030366526, evaluation loss: 2.173468318793726
+steps 391
+steps 392
+steps 393
+steps 394
+steps 395
+train loss: 2.153204307840042, evaluation loss: 2.1736689466836907
+steps 396
+steps 397
+steps 398
+steps 399
+steps 400
+train loss: 2.159613068349622, evaluation loss: 2.173905832556988
+steps 401
+steps 402
+steps 403
+steps 404
+steps 405
+train loss: 2.1538687223622595, evaluation loss: 2.1739024571844876
+steps 406
+steps 407
+steps 408
+steps 409
+steps 410
+train loss: 2.1520778083063696, evaluation loss: 2.1738453779157934
+steps 411
+steps 412
+steps 413
+steps 414
+steps 415
+train loss: 2.159451483664731, evaluation loss: 2.1737042505586675
+steps 416
+steps 417
+steps 418
+steps 419
+steps 420
+train loss: 2.16614679903688, evaluation loss: 2.1736238358841575
+steps 421
+steps 422
+steps 423
+steps 424
+steps 425
+train loss: 2.1418550294412158, evaluation loss: 2.1736288587762798
+steps 426
+steps 427
+steps 428
+steps 429
+steps 430
+train loss: 2.1566278244086883, evaluation loss: 2.173335215119826
+steps 431
+steps 432
+steps 433
+steps 434
+steps 435
+train loss: 2.159460695950326, evaluation loss: 2.1731939937000315
+steps 436
+steps 437
+steps 438
+steps 439
+steps 440
+train loss: 2.1550715580932844, evaluation loss: 2.1734193685582315
+steps 441
+steps 442
+steps 443
+steps 444
+steps 445
+train loss: 2.168792642575739, evaluation loss: 2.173605778546443
+steps 446
+steps 447
+steps 448
+steps 449
+steps 450
+train loss: 2.142642717385639, evaluation loss: 2.173648500621762
+steps 451
+steps 452
+steps 453
+steps 454
+steps 455
+train loss: 2.1572762340376905, evaluation loss: 2.1738941274735644
+steps 456
+steps 457
+steps 458
+steps 459
+steps 460
+train loss: 2.167004405667595, evaluation loss: 2.173791098692439
+steps 461
+steps 462
+steps 463
+steps 464
+steps 465
+train loss: 2.1594232904828488, evaluation loss: 2.1741139355357437
+steps 466
+steps 467
+steps 468
+steps 469
+steps 470
+train loss: 2.1543789844963674, evaluation loss: 2.1743678133284434
+steps 471
+steps 472
+steps 473
+steps 474
+steps 475
+train loss: 2.1450739623956374, evaluation loss: 2.1743420432301606
+steps 476
+steps 477
+steps 478
+steps 479
+steps 480
+train loss: 2.1540420530322972, evaluation loss: 2.1742530991050413
+steps 481
+steps 482
+steps 483
+steps 484
+steps 485
+train loss: 2.1525410507276064, evaluation loss: 2.1741155390924303
+steps 486
+steps 487
+steps 488
+steps 489
+steps 490
+train loss: 2.15849083479408, evaluation loss: 2.1740453134995485
+steps 491
+steps 492
+steps 493
+steps 494
+steps 495
+train loss: 2.156874875001569, evaluation loss: 2.1732518958039733
+steps 496
+steps 497
+steps 498
+steps 499
+steps 500
+train loss: 2.153119514742735, evaluation loss: 2.1746229811471314
+steps 501
+steps 502
+steps 503
+steps 504
+steps 505
+train loss: 2.1497942410278403, evaluation loss: 2.1736621029520204
+steps 506
+steps 507
+steps 508
+steps 509
+steps 510
+train loss: 2.15444771789782, evaluation loss: 2.173350023316897
+steps 511
+steps 512
+steps 513
+steps 514
+steps 515
+train loss: 2.151586767831096, evaluation loss: 2.174429732667427
+steps 516
+steps 517
+steps 518
+steps 519
+steps 520
+train loss: 2.1532841790966515, evaluation loss: 2.174775542800197
+steps 521
+steps 522
+steps 523
+steps 524
+steps 525
+train loss: 2.15710074559703, evaluation loss: 2.174310402971433
+steps 526
+steps 527
+steps 528
+steps 529
+steps 530
+train loss: 2.1610703918543215, evaluation loss: 2.173870362208418
+steps 531
+steps 532
+steps 533
+steps 534
+steps 535
+train loss: 2.15800094514139, evaluation loss: 2.1730094174482426
+steps 536
+steps 537
+steps 538
+steps 539
+steps 540
+train loss: 2.156629491661909, evaluation loss: 2.172668027195199
+saveing model...
+steps 541
+steps 542
+steps 543
+steps 544
+steps 545
+train loss: 2.1532865361851408, evaluation loss: 2.1723147722116773
+saveing model...
+steps 546
+steps 547
+steps 548
+steps 549
+steps 550
+train loss: 2.1364884605773447, evaluation loss: 2.1782291994677885
+steps 551
+steps 552
+steps 553
+steps 554
+steps 555
+train loss: 2.16060082114501, evaluation loss: 2.1815086891466278
+steps 556
+steps 557
+steps 558
+steps 559
+steps 560
+train loss: 2.146246586625438, evaluation loss: 2.17689050437345
+steps 561
+steps 562
+steps 563
+steps 564
+steps 565
+train loss: 2.139353176269823, evaluation loss: 2.168499925963414
+saveing model...
+steps 566
+steps 567
+steps 568
+steps 569
+steps 570
+train loss: 2.1458724535641323, evaluation loss: 2.168077623331346
+saveing model...
+steps 571
+steps 572
+steps 573
+steps 574
+steps 575
+train loss: 2.1486273016203117, evaluation loss: 2.1683853376191182
+steps 576
+steps 577
+steps 578
+steps 579
+steps 580
+train loss: 2.1522365837193846, evaluation loss: 2.1660717145297452
+saveing model...
+steps 581
+steps 582
+steps 583
+steps 584
+steps 585
+train loss: 2.143893137304661, evaluation loss: 2.1886552319085015
+steps 586
+steps 587
+steps 588
+steps 589
+steps 590
+train loss: 2.128831887067198, evaluation loss: 2.1864243604744837
+steps 591
+steps 592
+steps 593
+steps 594
+steps 595
+train loss: 2.125652816618953, evaluation loss: 2.193714456526941
+steps 596
+steps 597
+steps 598
+steps 599
+steps 600
+train loss: 2.145843129639285, evaluation loss: 2.1758380398554817
+steps 601
+steps 602
+steps 603
+steps 604
+steps 605
+train loss: 2.1249021434254, evaluation loss: 2.198818805792367
+steps 606
+steps 607
+steps 608
+steps 609
+steps 610
+train loss: 2.131158336702955, evaluation loss: 2.17217432719464
+steps 611
+steps 612
+steps 613
+steps 614
+steps 615
+train loss: 2.131779993186124, evaluation loss: 2.175409323915527
+steps 616
+steps 617
+steps 618
+steps 619
+steps 620
+train loss: 2.123381626219274, evaluation loss: 2.2029182465429127
+steps 621
+steps 622
+steps 623
+steps 624
+steps 625
+train loss: 2.1152043988135274, evaluation loss: 2.1747932619651715
+steps 626
+steps 627
+steps 628
+steps 629
+steps 630
+train loss: 2.134371926310076, evaluation loss: 2.1637273378756956
+saveing model...
+steps 631
+steps 632
+steps 633
+steps 634
+steps 635
+train loss: 2.105655303771428, evaluation loss: 2.173930393721629
+steps 636
+steps 637
+steps 638
+steps 639
+steps 640
+train loss: 2.124157186760959, evaluation loss: 2.149709926829227
+saveing model...
+steps 641
+steps 642
+steps 643
+steps 644
+steps 645
+train loss: 2.095279774365717, evaluation loss: 2.143830298482503
+saveing model...
+steps 646
+steps 647
+steps 648
+steps 649
+steps 650
+train loss: 2.114889994695756, evaluation loss: 2.140710918391969
+saveing model...
+steps 651
+steps 652
+steps 653
+steps 654
+steps 655
+train loss: 2.108494101795455, evaluation loss: 2.168587867560223
+steps 656
+steps 657
+steps 658
+steps 659
+steps 660
+train loss: 2.1136617266666082, evaluation loss: 2.201328422467028
+steps 661
+steps 662
+steps 663
+steps 664
+steps 665
+train loss: 2.08104431940032, evaluation loss: 2.177147429787986
+steps 666
+steps 667
+steps 668
+steps 669
+steps 670
+train loss: 2.106784394557985, evaluation loss: 2.1375948055007354
+saveing model...
+steps 671
+steps 672
+steps 673
+steps 674
+steps 675
+train loss: 2.1127811661703615, evaluation loss: 2.135641398026232
+saveing model...
+steps 676
+steps 677
+steps 678
+steps 679
+steps 680
+train loss: 2.11263938213888, evaluation loss: 2.1365993183253877
+steps 681
+steps 682
+steps 683
+steps 684
+steps 685
+train loss: 2.108286359379406, evaluation loss: 2.165372814947393
+steps 686
+steps 687
+steps 688
+steps 689
+steps 690
+train loss: 2.100744527130458, evaluation loss: 2.17189949391891
+steps 691
+steps 692
+steps 693
+steps 694
+steps 695
+train loss: 2.0972160689758192, evaluation loss: 2.172548027715272
+steps 696
+steps 697
+steps 698
+steps 699
+steps 700
+train loss: 2.115002072972203, evaluation loss: 2.168952526151513
+steps 701
+steps 702
+steps 703
+steps 704
+steps 705
+train loss: 2.0986970465905466, evaluation loss: 2.1371853036487654
+steps 706
+steps 707
+steps 708
+steps 709
+steps 710
+train loss: 2.095604387034141, evaluation loss: 2.133798880316876
+saveing model...
+steps 711
+steps 712
+steps 713
+steps 714
+steps 715
+train loss: 2.098932682453184, evaluation loss: 2.1317417994948573
+saveing model...
+steps 716
+steps 717
+steps 718
+steps 719
+steps 720
+train loss: 2.107923508309642, evaluation loss: 2.1343858256609236
+steps 721
+steps 722
+steps 723
+steps 724
+steps 725
+train loss: 2.0957852508488792, evaluation loss: 2.134539305948972
+steps 726
+steps 727
+steps 728
+steps 729
+steps 730
+train loss: 2.1034056341962146, evaluation loss: 2.1410107465316153
+steps 731
+steps 732
+steps 733
+steps 734
+steps 735
+train loss: 2.096917518057575, evaluation loss: 2.141011386622904
+steps 736
+steps 737
+steps 738
+steps 739
+steps 740
+train loss: 2.0979581384150388, evaluation loss: 2.138228628490244
+steps 741
+steps 742
+steps 743
+steps 744
+steps 745
+train loss: 2.1008100346176057, evaluation loss: 2.1323592435967256
+steps 746
+steps 747
+steps 748
+steps 749
+SELDNet(
+  (conv0): Conv2d(8, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn0): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (grus): GRU(32, 16, num_layers=2, batch_first=True, bidirectional=True)
+  (sed_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (sed_fc1): Linear(in_features=16, out_features=12, bias=True)
+  (doa_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (doa_fc1): Linear(in_features=16, out_features=36, bias=True)
+)
+steps 0
+Traceback (most recent call last):
+  File "train.py", line 93, in <module>
+    train(args)
+  File "train.py", line 65, in train
+    loss.backward()
+  File "/home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/tensor.py", line 198, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/autograd/__init__.py", line 100, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: CUDA out of memory. Tried to allocate 1.26 GiB (GPU 0; 7.93 GiB total capacity; 5.61 GiB already allocated; 1.06 GiB free; 5.64 GiB reserved in total by PyTorch) (malloc at /opt/conda/conda-bld/pytorch_1591914855613/work/c10/cuda/CUDACachingAllocator.cpp:289)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x4e (0x7febd4fecb5e in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1f39d (0x7febd523839d in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libc10_cuda.so)
+frame #2: <unknown function> + 0x2058e (0x7febd523958e in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libc10_cuda.so)
+frame #3: at::native::empty_cuda(c10::ArrayRef<long>, c10::TensorOptions const&, c10::optional<c10::MemoryFormat>) + 0x291 (0x7febd7f57401 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xdc454b (0x7febd620a54b in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xe0de37 (0x7febd6253e37 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xdd2339 (0x7fec01163339 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #7: <unknown function> + 0xdd2677 (0x7fec01163677 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xb7e60e (0x7fec00f0f60e in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #9: at::native::empty_like(at::Tensor const&, c10::TensorOptions const&, c10::optional<c10::MemoryFormat>) + 0x9e0 (0x7fec00f15f00 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #10: <unknown function> + 0xe912d1 (0x7fec012222d1 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #11: <unknown function> + 0xee45d3 (0x7fec012755d3 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #12: <unknown function> + 0xb7cb3a (0x7fec00f0db3a in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #13: at::native::zeros_like(at::Tensor const&, c10::TensorOptions const&, c10::optional<c10::MemoryFormat>) + 0x4c (0x7fec00f1412c in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #14: <unknown function> + 0xe9d924 (0x7fec0122e924 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #15: <unknown function> + 0xee45d3 (0x7fec012755d3 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #16: at::native::max_pool2d_with_indices_backward_cuda(at::Tensor const&, at::Tensor const&, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::ArrayRef<long>, bool, at::Tensor const&) + 0x181 (0x7febd7867ea1 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #17: <unknown function> + 0xdfa0c3 (0x7febd62400c3 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #18: <unknown function> + 0xe0f3bf (0x7febd62553bf in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so)
+frame #19: <unknown function> + 0x2a22679 (0x7fec02db3679 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #20: <unknown function> + 0xe21fff (0x7fec011b2fff in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #21: torch::autograd::generated::MaxPool2DWithIndicesBackward::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) + 0x2b2 (0x7fec029ce3a2 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #22: <unknown function> + 0x2ae7df5 (0x7fec02e78df5 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #23: torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&) + 0x16f3 (0x7fec02e760f3 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #24: torch::autograd::Engine::thread_main(std::shared_ptr<torch::autograd::GraphTask> const&, bool) + 0x3d2 (0x7fec02e76ed2 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #25: torch::autograd::Engine::thread_init(int) + 0x39 (0x7fec02e6f549 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so)
+frame #26: torch::autograd::python::PythonEngine::thread_init(int) + 0x38 (0x7fec063bf638 in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #27: <unknown function> + 0xc819d (0x7fec08c0919d in /home/raven/anaconda3/envs/nlp/lib/python3.7/site-packages/torch/lib/../../../.././libstdc++.so.6)
+frame #28: <unknown function> + 0x9609 (0x7fec228c9609 in /lib/x86_64-linux-gnu/libpthread.so.0)
+frame #29: clone + 0x43 (0x7fec227f0103 in /lib/x86_64-linux-gnu/libc.so.6)
+
+SELDNet(
+  (conv0): Conv2d(8, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn0): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (grus): GRU(32, 16, num_layers=2, batch_first=True, bidirectional=True)
+  (sed_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (sed_fc1): Linear(in_features=16, out_features=12, bias=True)
+  (doa_fc0): Linear(in_features=32, out_features=16, bias=True)
+  (doa_fc1): Linear(in_features=16, out_features=36, bias=True)
+)
+steps 0
+train loss: 0.5215360994755724, evaluation loss: 2.592098244411
+saveing model...
+steps 1
+steps 2
+steps 3
+steps 4
+steps 5
+train loss: 2.553366879897112, evaluation loss: 2.5345858125848544
+saveing model...
+steps 6
+steps 7
+steps 8
+steps 9
+steps 10
+train loss: 2.4978844591920812, evaluation loss: 2.484323794812972
+saveing model...
+steps 11
+steps 12
+steps 13
+steps 14
+steps 15
+train loss: 2.4622897512562743, evaluation loss: 2.464463527915799
+saveing model...
+steps 16
+steps 17
+steps 18
+steps 19
+steps 20
+train loss: 2.423118801840933, evaluation loss: 2.4264460535568695
+saveing model...
+steps 21
+steps 22
+steps 23
+steps 24
+steps 25
+train loss: 2.3883190803301293, evaluation loss: 2.3849185798535775
+saveing model...
+steps 26
+steps 27
+steps 28
+steps 29
+steps 30
+train loss: 2.3645479097715216, evaluation loss: 2.3488516082092796
+saveing model...
+steps 31
+steps 32
+steps 33
+steps 34
+steps 35
+train loss: 2.3352606083817795, evaluation loss: 2.319171937971015
+saveing model...
+steps 36
+steps 37
+steps 38
+steps 39
+steps 40
+train loss: 2.3041614236584675, evaluation loss: 2.29281463611617
+saveing model...
+steps 41
+steps 42
+steps 43
+steps 44
+steps 45
+train loss: 2.275187798794236, evaluation loss: 2.2692602385930973
+saveing model...
+steps 46
+steps 47
+steps 48
+steps 49
+steps 50
+train loss: 2.2545449118465433, evaluation loss: 2.250361021739263
+saveing model...
+steps 51
+steps 52
+steps 53
+steps 54
+steps 55
+train loss: 2.2399428484642088, evaluation loss: 2.2353497265835407
+saveing model...
+steps 56
+steps 57
+steps 58
+steps 59
+steps 60
+train loss: 2.222856618343485, evaluation loss: 2.222596891131779
+saveing model...
+steps 61
+steps 62
+steps 63
+steps 64
+steps 65
+train loss: 2.2091265923869345, evaluation loss: 2.210869569682942
+saveing model...
+steps 66
+steps 67
+steps 68
+steps 69
+steps 70
+train loss: 2.199009789870087, evaluation loss: 2.2013440385144576
+saveing model...
+steps 71
+steps 72
+steps 73
+steps 74
+steps 75
+train loss: 2.188852704443973, evaluation loss: 2.1933826090836224
+saveing model...
+steps 76
+steps 77
+steps 78
+steps 79
+steps 80
+train loss: 2.189848953148431, evaluation loss: 2.1858024892662287
+saveing model...
+steps 81
+steps 82
+steps 83
+steps 84
+steps 85
+train loss: 2.1772332900543856, evaluation loss: 2.180708031852462
+saveing model...
+steps 86
+steps 87
+steps 88
+steps 89
+steps 90
+train loss: 2.174381367016319, evaluation loss: 2.177114747845987
+saveing model...
+steps 91
+steps 92
+steps 93
+steps 94
+steps 95
+train loss: 2.1738897251082347, evaluation loss: 2.174050397826905
+saveing model...
+steps 96
+steps 97
+steps 98
+steps 99
+steps 100
+train loss: 2.1665098037374237, evaluation loss: 2.171013342850204
+saveing model...
+steps 101
+steps 102
+steps 103
+steps 104
+steps 105
+train loss: 2.1566851470333632, evaluation loss: 2.1687784443623683
+saveing model...
+steps 106
+steps 107
+steps 108
+steps 109
+steps 110
+train loss: 2.1686330779364846, evaluation loss: 2.167226713210125
+saveing model...
+steps 111
+steps 112
+steps 113
+steps 114
+steps 115
+train loss: 2.1589806721308755, evaluation loss: 2.1655574020233073
+saveing model...
+steps 116
+steps 117
+steps 118
+steps 119
+steps 120
+train loss: 2.16516825607862, evaluation loss: 2.1640693587808304
+saveing model...
+steps 121
+steps 122
+steps 123
+steps 124
+steps 125
+train loss: 2.1548769559165915, evaluation loss: 2.1621779389345037
+saveing model...
+steps 126
+steps 127
+steps 128
+steps 129
+steps 130
+train loss: 2.1661209657501104, evaluation loss: 2.1616183107927878
+saveing model...
+steps 131
+steps 132
+steps 133
+steps 134
+steps 135
+train loss: 2.1645333421097535, evaluation loss: 2.1613721202528113
+saveing model...
+steps 136
+steps 137
+steps 138
+steps 139
+steps 140
+train loss: 2.162533295282011, evaluation loss: 2.1614005084344807
+steps 141
+steps 142
+steps 143
+steps 144
+steps 145
+train loss: 2.174342376848496, evaluation loss: 2.160930885585291
+saveing model...
+steps 146
+steps 147
+steps 148
+steps 149
+steps 150
+train loss: 2.1427279532186523, evaluation loss: 2.160346525947325
+saveing model...
+steps 151
+steps 152
+steps 153
+steps 154
+steps 155
+train loss: 2.161773130176782, evaluation loss: 2.1602815889563907
+saveing model...
+steps 156
+steps 157
+steps 158
+steps 159
+steps 160
+train loss: 2.151327084616607, evaluation loss: 2.1600931655128184
+saveing model...
+steps 161
+steps 162
+steps 163
+steps 164
+steps 165
+train loss: 2.1530430491943724, evaluation loss: 2.160050200728752
+saveing model...
+steps 166
+steps 167
+steps 168
+steps 169
+steps 170
+train loss: 2.1650005974334037, evaluation loss: 2.159711474528294
+saveing model...
+steps 171
+steps 172
+steps 173
+steps 174
+steps 175
+train loss: 2.1609925097896854, evaluation loss: 2.158850340181373
+saveing model...
+steps 176
+steps 177
+steps 178
+steps 179
+steps 180
+train loss: 2.1567931791156596, evaluation loss: 2.158439128167418
+saveing model...
+steps 181
+steps 182
+steps 183
+steps 184
+steps 185
+train loss: 2.1556144155380133, evaluation loss: 2.15828719288048
+saveing model...
+steps 186
+steps 187
+steps 188
+steps 189
+steps 190
+train loss: 2.1526327235658607, evaluation loss: 2.157846221676909
+saveing model...
+steps 191
+steps 192
+steps 193
+steps 194
+steps 195
+train loss: 2.1644645857967637, evaluation loss: 2.157195761586425
+saveing model...
+steps 196
+steps 197
+steps 198
+steps 199
+steps 200
+train loss: 2.1585748215442964, evaluation loss: 2.1571492367205134
+saveing model...
+steps 201
+steps 202
+steps 203
+steps 204
+steps 205
+train loss: 2.1541616369580545, evaluation loss: 2.1573259930951947
+steps 206
+steps 207
+steps 208
+steps 209
+steps 210
+train loss: 2.1617518858760976, evaluation loss: 2.157404837781622
+steps 211
+steps 212
+steps 213
+steps 214
+steps 215
+train loss: 2.155164643973733, evaluation loss: 2.157231101345943
+steps 216
+steps 217
+steps 218
+steps 219
+steps 220
+train loss: 2.156957127655304, evaluation loss: 2.157447371947909
+steps 221
+steps 222
+steps 223
+steps 224
+steps 225
+train loss: 2.1483932946200164, evaluation loss: 2.1573988290733124
+steps 226
+steps 227
+steps 228
+steps 229
+steps 230
+train loss: 2.157381040894052, evaluation loss: 2.1578224432433366
+steps 231
+steps 232
+steps 233
+steps 234
+steps 235
+train loss: 2.161073897892657, evaluation loss: 2.157555375050699
+steps 236
+steps 237
+steps 238
+steps 239
+steps 240
+train loss: 2.1598144149309393, evaluation loss: 2.1585750790496627
+steps 241
+steps 242
+steps 243
+steps 244
+steps 245
+train loss: 2.16746648583382, evaluation loss: 2.159015264722933
+steps 246
+steps 247
+steps 248
+steps 249
+steps 250
+train loss: 2.1463737922402433, evaluation loss: 2.1580020664005186
+steps 251
+steps 252
+steps 253
+steps 254
+steps 255
+train loss: 2.1533305576270436, evaluation loss: 2.1576400101077025
+steps 256
+steps 257
+steps 258
+steps 259
+steps 260
+train loss: 2.1637462776006435, evaluation loss: 2.158475002585511
+steps 261
+steps 262
+steps 263
+steps 264
+steps 265
+train loss: 2.1517401954856177, evaluation loss: 2.1580655137016493
+steps 266
+steps 267
+steps 268
+steps 269
+steps 270
+train loss: 2.1573196236374876, evaluation loss: 2.1573241656799333
+steps 271
+steps 272
+steps 273
+steps 274
+steps 275
+train loss: 2.161195115116863, evaluation loss: 2.15682511499996
+saveing model...
+steps 276
+steps 277
+steps 278
+steps 279
+steps 280
+train loss: 2.153296161994745, evaluation loss: 2.1573824929008962
+steps 281
+steps 282
+steps 283
+steps 284
+steps 285
+train loss: 2.165858036439304, evaluation loss: 2.1580038429610093
+steps 286
+steps 287
+steps 288
+steps 289
+steps 290
+train loss: 2.1567765047234664, evaluation loss: 2.157457147720943
+steps 291
+steps 292
+steps 293
+steps 294
+steps 295
+train loss: 2.1513825243323907, evaluation loss: 2.157055968443712
+steps 296
+steps 297
+steps 298
+steps 299
+steps 300
+train loss: 2.155670831447688, evaluation loss: 2.1571177395024033
+steps 301
+steps 302
+steps 303
+steps 304
+steps 305
+train loss: 2.157891885319093, evaluation loss: 2.1570553710599074
+steps 306
+steps 307
+steps 308
+steps 309
+steps 310
+train loss: 2.1678484730748453, evaluation loss: 2.157436810752883
+steps 311
+steps 312
+steps 313
+steps 314
+steps 315
+train loss: 2.1653961433658413, evaluation loss: 2.1578612773227293
+steps 316
+steps 317
+steps 318
+steps 319
+steps 320
+train loss: 2.1377169140038186, evaluation loss: 2.1581648502372306
+steps 321
+steps 322
+steps 323
+steps 324
+steps 325
+train loss: 2.154583660634342, evaluation loss: 2.157371395476449
+steps 326
+steps 327
+steps 328
+steps 329
+steps 330
+train loss: 2.1553325995063255, evaluation loss: 2.1571492601208093
+steps 331
+steps 332
+steps 333
+steps 334
+steps 335
+train loss: 2.15460641911616, evaluation loss: 2.1559373855173014
+saveing model...
+steps 336
+steps 337
+steps 338
+steps 339
+steps 340
+train loss: 2.1535692257115864, evaluation loss: 2.155715019295902
+saveing model...
+steps 341
+steps 342
+steps 343
+steps 344
+steps 345
+train loss: 2.1573793067583997, evaluation loss: 2.1557592699233497
+steps 346
+steps 347
+steps 348
+steps 349
+steps 350
+train loss: 2.168682053509756, evaluation loss: 2.155702585106167
+saveing model...
+steps 351
+steps 352
+steps 353
+steps 354
+steps 355
+train loss: 2.1483690659847032, evaluation loss: 2.155479912737337
+saveing model...
+steps 356
+steps 357
+steps 358
+steps 359
+steps 360
+train loss: 2.153167763829436, evaluation loss: 2.1556898068971293
+steps 361
+steps 362
+steps 363
+steps 364
+steps 365
+train loss: 2.1582444700054584, evaluation loss: 2.1568063442839485
+steps 366
+steps 367
+steps 368
+steps 369
+steps 370
+train loss: 2.159572655050285, evaluation loss: 2.157951436520025
+steps 371
+steps 372
+steps 373
+steps 374
+steps 375
+train loss: 2.149838196029694, evaluation loss: 2.1573520076339423
+steps 376
+steps 377
+steps 378
+steps 379
+steps 380
+train loss: 2.1676405009785102, evaluation loss: 2.1575975493115878
+steps 381
+steps 382
+steps 383
+steps 384
+steps 385
+train loss: 2.150822524802404, evaluation loss: 2.1576199528873725
+steps 386
+steps 387
+steps 388
+steps 389
+steps 390
+train loss: 2.1490801448060584, evaluation loss: 2.156983623096928
+steps 391
+steps 392
+steps 393
+steps 394
+steps 395
+train loss: 2.1540583565080462, evaluation loss: 2.1564799297953807
+steps 396
+steps 397
+steps 398
+steps 399
+steps 400
+train loss: 2.161745255837184, evaluation loss: 2.1567894054448464
+steps 401
+steps 402
+steps 403
+steps 404
+steps 405
+train loss: 2.1539291577854796, evaluation loss: 2.1570456476333884
+steps 406
+steps 407
+steps 408
+steps 409
+steps 410
+train loss: 2.15186014703872, evaluation loss: 2.157152013835761
+steps 411
+steps 412
+steps 413
+steps 414
+steps 415
+train loss: 2.16145851307874, evaluation loss: 2.1566647927077693
+steps 416
+steps 417
+steps 418
+steps 419
+steps 420
+train loss: 2.139582560376655, evaluation loss: 2.1569730260499753
+steps 421
+steps 422
+steps 423
+steps 424
+steps 425
+train loss: 2.1624416934906185, evaluation loss: 2.1564097061731466
+steps 426
+steps 427
+steps 428
+steps 429
+steps 430
+train loss: 2.162925424494867, evaluation loss: 2.160278100368748
+steps 431
+steps 432
+steps 433
+steps 434
+steps 435
+train loss: 2.1518601970306706, evaluation loss: 2.1573037320590553
+steps 436
+steps 437
+steps 438
+steps 439
+steps 440
+train loss: 2.147138312757802, evaluation loss: 2.1556259214234816
+steps 441
+steps 442
+steps 443
+steps 444
+steps 445
+train loss: 2.152495155471466, evaluation loss: 2.1560401576199024
+steps 446
+steps 447
+steps 448
+steps 449
+steps 450
+train loss: 2.144836180964915, evaluation loss: 2.155532948604356
+steps 451
+steps 452
+steps 453
+steps 454
+steps 455
+train loss: 2.1568043251653237, evaluation loss: 2.1567423333403353
+steps 456
+steps 457
+steps 458
+steps 459
+steps 460
+train loss: 2.1485238909418234, evaluation loss: 2.157601862300687
+steps 461
+steps 462
+steps 463
+steps 464
+steps 465
+train loss: 2.1405001158905668, evaluation loss: 2.1583834839666043
+steps 466
+steps 467
+steps 468
+steps 469
+steps 470
+train loss: 2.156916472871671, evaluation loss: 2.15628174024709
+steps 471
+steps 472
+steps 473
+steps 474
+steps 475
+train loss: 2.147777508903823, evaluation loss: 2.1570393569116457
+steps 476
+steps 477
+steps 478
+steps 479
+steps 480
+train loss: 2.1361429096968374, evaluation loss: 2.1637484399659903
+steps 481
+steps 482
+steps 483
+steps 484
+steps 485
+train loss: 2.162418872414348, evaluation loss: 2.1559469535951545
+steps 486
+steps 487
+steps 488
+steps 489
+steps 490
+train loss: 2.139082940861682, evaluation loss: 2.15554956930473
+steps 491
+steps 492
+steps 493
+steps 494
+steps 495
+train loss: 2.148510991627389, evaluation loss: 2.1554855970734224
+steps 496
+steps 497
+steps 498
+steps 499
+steps 500
+train loss: 2.132186725271881, evaluation loss: 2.1558820398414014
+steps 501
+steps 502
+steps 503
+steps 504
+steps 505
+train loss: 2.1435619870746065, evaluation loss: 2.153730236032307
+saveing model...
+steps 506
+steps 507
+steps 508
+steps 509
+steps 510
+train loss: 2.1416092155899404, evaluation loss: 2.1530124909311965
+saveing model...
+steps 511
+steps 512
+steps 513
+steps 514
+steps 515
+train loss: 2.129395812829663, evaluation loss: 2.157132117099715
+steps 516
+steps 517
+steps 518
+steps 519
+steps 520
+train loss: 2.131178177026812, evaluation loss: 2.153093398616492
+steps 521
+steps 522
+steps 523
+steps 524
+steps 525
+train loss: 2.14992978271876, evaluation loss: 2.151322724625499
+saveing model...
+steps 526
+steps 527
+steps 528
+steps 529
+steps 530
+train loss: 2.1222290339796763, evaluation loss: 2.1641623879909604
+steps 531
+steps 532
+steps 533
+steps 534
+steps 535
+train loss: 2.1391534175972464, evaluation loss: 2.202025609315633
+steps 536
+steps 537
+steps 538
+steps 539
+steps 540
+train loss: 2.143758243126177, evaluation loss: 2.176803014653813
+steps 541
+steps 542
+steps 543
+steps 544
+steps 545
+train loss: 2.115817218395885, evaluation loss: 2.189788943795523
+steps 546
+steps 547
+steps 548
+steps 549
+steps 550
+train loss: 2.134596746435853, evaluation loss: 2.1507840106007055
+saveing model...
+steps 551
+steps 552
+steps 553
+steps 554
+steps 555
+train loss: 2.1134107572484178, evaluation loss: 2.154223444059911
+steps 556
+steps 557
+steps 558
+steps 559
+steps 560
+train loss: 2.135871457560269, evaluation loss: 2.1974162351022324
+steps 561
+steps 562
+steps 563
+steps 564
+steps 565
+train loss: 2.116179272068311, evaluation loss: 2.1476148682309337
+saveing model...
+steps 566
+steps 567
+steps 568
+steps 569
+steps 570
+train loss: 2.1259337649267955, evaluation loss: 2.1467970259930667
+saveing model...
+steps 571
+steps 572
+steps 573
+steps 574
+steps 575
+train loss: 2.1280946369942684, evaluation loss: 2.1588294610364622
+steps 576
+steps 577
+steps 578
+steps 579
+steps 580
+train loss: 2.117721517465953, evaluation loss: 2.1438315355219357
+saveing model...
+steps 581
+steps 582
+steps 583
+steps 584
+steps 585
+train loss: 2.1175594268338442, evaluation loss: 2.143400403969537
+saveing model...
+steps 586
+steps 587
+steps 588
+steps 589
+steps 590
+train loss: 2.1195730773680643, evaluation loss: 2.1423446739642786
+saveing model...
+steps 591
+steps 592
+steps 593
+steps 594
+steps 595
+train loss: 2.1166261353943483, evaluation loss: 2.141170667238019
+saveing model...
+steps 596
+steps 597
+steps 598
+steps 599
+steps 600
+train loss: 2.1186357793518775, evaluation loss: 2.1405968322967093
+saveing model...
+steps 601
+steps 602
+steps 603
+steps 604
+steps 605
+train loss: 2.107308937686571, evaluation loss: 2.1417156571686204
+steps 606
+steps 607
+steps 608
+steps 609
+steps 610
+train loss: 2.1208277362337875, evaluation loss: 2.139494111508759
+saveing model...
+steps 611
+steps 612
+steps 613
+steps 614
+steps 615
+train loss: 2.1188996769393382, evaluation loss: 2.139458251030192
+saveing model...
+steps 616
+steps 617
+steps 618
+steps 619
+steps 620
+train loss: 2.111718865787533, evaluation loss: 2.1385383824795254
+saveing model...
+steps 621
+steps 622
+steps 623
+steps 624
+steps 625
+train loss: 2.1035211377676397, evaluation loss: 2.1377995378063397
+saveing model...
+steps 626
+steps 627
+steps 628
+steps 629
+steps 630
+train loss: 2.100226972557183, evaluation loss: 2.1742628787395275
+steps 631
+steps 632
+steps 633
+steps 634
+steps 635
+train loss: 2.107414676259068, evaluation loss: 2.138209455974522
+steps 636
+steps 637
+steps 638
+steps 639
+steps 640
+train loss: 2.1111232706053675, evaluation loss: 2.192217571738411
+steps 641
+steps 642
+steps 643
+steps 644
+steps 645
+train loss: 2.111033609426582, evaluation loss: 2.136629064012264
+saveing model...
+steps 646
+steps 647
+steps 648
+steps 649
+steps 650
+train loss: 2.120275266454678, evaluation loss: 2.1375754792423427
+steps 651
+steps 652
+steps 653
+steps 654
+steps 655
+train loss: 2.106795031347467, evaluation loss: 2.136169536432538
+saveing model...
+steps 656
+steps 657
+steps 658
+steps 659
+steps 660
+train loss: 2.1019064117963113, evaluation loss: 2.1589005898968265
+steps 661
+steps 662
+steps 663
+steps 664
+steps 665
+train loss: 2.087491834792469, evaluation loss: 2.23498273547881
+steps 666
+steps 667
+steps 668
+steps 669
+steps 670
+train loss: 2.102539833192831, evaluation loss: 2.1350443025532595
+saveing model...
+steps 671
+steps 672
+steps 673
+steps 674
+steps 675
+train loss: 2.101033808209844, evaluation loss: 2.1450942697949795
+steps 676
+steps 677
+steps 678
+steps 679
+steps 680
+train loss: 2.117227284841528, evaluation loss: 2.14503779734066
+steps 681
+steps 682
+steps 683
+steps 684
+steps 685
+train loss: 2.0937929897145375, evaluation loss: 2.13681672241594
+steps 686
+steps 687
+steps 688
+steps 689
+steps 690
+train loss: 2.0971919194039677, evaluation loss: 2.1347234914584
+saveing model...
+steps 691
+steps 692
+steps 693
+steps 694
+steps 695
+train loss: 2.116367170948744, evaluation loss: 2.2375270802111826
+steps 696
+steps 697
+steps 698
+steps 699
+steps 700
+train loss: 2.093623825159475, evaluation loss: 2.2332337037917847
+steps 701
+steps 702
+steps 703
+steps 704
+steps 705
+train loss: 2.0979703636999583, evaluation loss: 2.2220057425469215
+steps 706
+steps 707
+steps 708
+steps 709
+steps 710
+train loss: 2.099234801710902, evaluation loss: 2.2366544215459787
+steps 711
+steps 712
+steps 713
+steps 714
+steps 715
+train loss: 2.099472637412729, evaluation loss: 2.14473211080913
+steps 716
+steps 717
+steps 718
+steps 719
+steps 720
+train loss: 2.1002185392167276, evaluation loss: 2.144783847969547
+steps 721
+steps 722
+steps 723
+steps 724
+steps 725
+train loss: 2.1068667253473357, evaluation loss: 2.144812513687622
+steps 726
+steps 727
+steps 728
+steps 729
+steps 730
+train loss: 2.1013520121478493, evaluation loss: 2.210145485214883
+steps 731
+steps 732
+steps 733
+steps 734
+steps 735
+train loss: 2.093501518454065, evaluation loss: 2.1455229443086496
+steps 736
+steps 737
+steps 738
+steps 739
+steps 740
+train loss: 2.1053912924043408, evaluation loss: 2.229810012832836
+steps 741
+steps 742
+steps 743
+steps 744
+steps 745
+train loss: 2.092295940804147, evaluation loss: 2.1459113134829617
+steps 746
+steps 747
+steps 748
+steps 749
+steps 750
+train loss: 2.1045367960627686, evaluation loss: 2.143218683147136
+steps 751
+steps 752
+steps 753
+steps 754
+steps 755
+train loss: 2.097649642626318, evaluation loss: 2.1418098418050637
+steps 756
+steps 757
+steps 758
+steps 759
+steps 760
+train loss: 2.10051845804358, evaluation loss: 2.2371039956696763
+steps 761
+steps 762
+steps 763
+steps 764
+steps 765
+train loss: 2.101306224456997, evaluation loss: 2.1368311178440913
+steps 766
+steps 767
+steps 768
+steps 769
+steps 770
+train loss: 2.094651961360505, evaluation loss: 2.142601996443201
+steps 771
+steps 772
+steps 773
+steps 774
+steps 775
+train loss: 2.1005386496324157, evaluation loss: 2.133872349264814
+saveing model...
+steps 776
+steps 777
+steps 778
+steps 779
+steps 780
+train loss: 2.1009768075311444, evaluation loss: 2.1374517262606556
+steps 781
+steps 782
+steps 783
+steps 784
+steps 785
+train loss: 2.1022061196383026, evaluation loss: 2.1468442565207875
+steps 786
+steps 787
+steps 788
+steps 789
+steps 790
+train loss: 2.095712019208212, evaluation loss: 2.147029337378858
+steps 791
+steps 792
+steps 793
+steps 794
+steps 795
+train loss: 2.09760261913409, evaluation loss: 2.1468682046399783
+steps 796
+steps 797
+steps 798
+steps 799
+steps 800
+train loss: 2.1035249244093057, evaluation loss: 2.138980066222139
+steps 801
+steps 802
+steps 803
+steps 804
+steps 805
+train loss: 2.103418223870753, evaluation loss: 2.13670834952714
+steps 806
+steps 807
+steps 808
+steps 809
+steps 810
+train loss: 2.0973869072370688, evaluation loss: 2.1369305005954464
+steps 811
+steps 812
+steps 813
+steps 814
+steps 815
+train loss: 2.09106293482336, evaluation loss: 2.1367451032008082
+steps 816
+steps 817
+steps 818
+steps 819
+steps 820
+train loss: 2.0946909638300677, evaluation loss: 2.1342269131122693
+steps 821
+steps 822
+steps 823
+steps 824
+steps 825
+train loss: 2.093601920869661, evaluation loss: 2.1333439087384956
+saveing model...
+steps 826
+steps 827
+steps 828
+steps 829
+steps 830
+train loss: 2.102799788549996, evaluation loss: 2.1333831957704272
+steps 831
+steps 832
+steps 833
+steps 834
+steps 835
+train loss: 2.093433679221035, evaluation loss: 2.1330344529227556
+saveing model...
+steps 836
+steps 837
+steps 838
+steps 839
+steps 840
+train loss: 2.100559818530586, evaluation loss: 2.1337326035164854
+steps 841
+steps 842
+steps 843
+steps 844
+steps 845
+train loss: 2.09242058032233, evaluation loss: 2.134989680106143
+steps 846
+steps 847
+steps 848
+steps 849
+steps 850
+train loss: 2.0953623400810963, evaluation loss: 2.1329129987422273
+saveing model...
+steps 851
+steps 852
+steps 853
+steps 854
+steps 855
+train loss: 2.0907636795768814, evaluation loss: 2.1326031196231923
+saveing model...
+steps 856
+steps 857
+steps 858
+steps 859
+steps 860
+train loss: 2.0943005908601937, evaluation loss: 2.1340780891776867
+steps 861
+steps 862
+steps 863
+steps 864
+steps 865
+train loss: 2.1004928836729073, evaluation loss: 2.1327719898016886
+steps 866
+steps 867
+steps 868
+steps 869
+steps 870
+train loss: 2.082152306570627, evaluation loss: 2.1344858230851966
+steps 871
+steps 872
+steps 873
+steps 874
+steps 875
+train loss: 2.10077051329656, evaluation loss: 2.1363126117645392
+steps 876
+steps 877
+steps 878
+steps 879
+steps 880
+train loss: 2.091913238017176, evaluation loss: 2.136729891711295
+steps 881
+steps 882
+steps 883
+steps 884
+steps 885
+train loss: 2.0973027445536276, evaluation loss: 2.13635432373667
+steps 886
+steps 887
+steps 888
+steps 889
+steps 890
+train loss: 2.087617420560769, evaluation loss: 2.135999031907692
+steps 891
+steps 892
+steps 893
+steps 894
+steps 895
+train loss: 2.098764281796564, evaluation loss: 2.135519573603078
+steps 896
+steps 897
+steps 898
+steps 899
+steps 900
+train loss: 2.0913120020338813, evaluation loss: 2.132584919441033
+saveing model...
+steps 901
+steps 902
+steps 903
+steps 904
+steps 905
+train loss: 2.089534629775779, evaluation loss: 2.132552396036309
+saveing model...
+steps 906
+steps 907
+steps 908
+steps 909
+steps 910
+train loss: 2.0902037893380467, evaluation loss: 2.1326460642862264
+steps 911
+steps 912
+steps 913
+steps 914
+steps 915
+train loss: 2.0964051570728737, evaluation loss: 2.134472733091487
+steps 916
+steps 917
+steps 918
+steps 919
+steps 920
+train loss: 2.094994560829587, evaluation loss: 2.132889219095181
+steps 921
+steps 922
+steps 923
+steps 924
+steps 925
+train loss: 2.0947799937196456, evaluation loss: 2.133621381015104
+steps 926
+steps 927
+steps 928
+steps 929
+steps 930
+train loss: 2.0888932504409214, evaluation loss: 2.1334693123637636
+steps 931
+steps 932
+steps 933
+steps 934
+steps 935
+train loss: 2.0833015839490345, evaluation loss: 2.133183775235873
+steps 936
+steps 937
+steps 938
+steps 939
+steps 940
+train loss: 2.0986351140648756, evaluation loss: 2.133838358238066
+steps 941
+steps 942
+steps 943
+steps 944
+steps 945
+train loss: 2.089929201686361, evaluation loss: 2.1331047287010043
+steps 946
+steps 947
+steps 948
+steps 949
+steps 950
+train loss: 2.0938490536932983, evaluation loss: 2.132353366344382
+saveing model...
+steps 951
+steps 952
+steps 953
+steps 954
+steps 955
+train loss: 2.0925827737953293, evaluation loss: 2.1337508492368964
+steps 956
+steps 957
+steps 958
+steps 959
+steps 960
+train loss: 2.085749397644207, evaluation loss: 2.1338486351396866
+steps 961
+steps 962
+steps 963
+steps 964
+steps 965
+train loss: 2.0968468494197983, evaluation loss: 2.131876528425621
+saveing model...
+steps 966
+steps 967
+steps 968
+steps 969
+steps 970
+train loss: 2.090895246199043, evaluation loss: 2.1325608528277216
+steps 971
+steps 972
+steps 973
+steps 974
+steps 975
+train loss: 2.0844711539769527, evaluation loss: 2.137361556313921
+steps 976
+steps 977
+steps 978
+steps 979
+steps 980
+train loss: 2.082420513684356, evaluation loss: 2.1339577330934194
+steps 981
+steps 982
+steps 983
+steps 984
+steps 985
+train loss: 2.096457687013282, evaluation loss: 2.1363150103816504
+steps 986
+steps 987
+steps 988
+steps 989
+steps 990
+train loss: 2.0817894807286956, evaluation loss: 2.133528605315636
+steps 991
+steps 992
+steps 993
+steps 994
+steps 995
+train loss: 2.0938992306453414, evaluation loss: 2.1346841021890572
+steps 996
+steps 997
+steps 998
+steps 999
+steps 1000
+train loss: 2.0814051400420532, evaluation loss: 2.156531450997261
+steps 1001
+steps 1002
+steps 1003
+steps 1004
+steps 1005
+train loss: 2.0797136685951236, evaluation loss: 2.180412344750646
+steps 1006
+steps 1007
+steps 1008
+steps 1009
+steps 1010
+train loss: 2.085059574182002, evaluation loss: 2.1407109959431514
+steps 1011
+steps 1012
+steps 1013
+steps 1014
+steps 1015
+train loss: 2.0803789098252894, evaluation loss: 2.1463044002150697
+steps 1016
+steps 1017
+steps 1018
+steps 1019
+steps 1020
+train loss: 2.088056205433348, evaluation loss: 2.1466594154124854
+steps 1021
+steps 1022
+steps 1023
+steps 1024
+steps 1025
+train loss: 2.0686983967694803, evaluation loss: 2.1628518026621846
+steps 1026
+steps 1027
+steps 1028
+steps 1029
+steps 1030
+train loss: 2.082910676121727, evaluation loss: 2.2397249282195584
+steps 1031
+steps 1032
+steps 1033
+steps 1034
+steps 1035
+train loss: 2.0800270087841763, evaluation loss: 2.2391165605469214
+steps 1036
+steps 1037
+steps 1038
+steps 1039
+steps 1040
+train loss: 2.084329937392159, evaluation loss: 2.239402043700476
+steps 1041
+steps 1042
+steps 1043
+steps 1044
+steps 1045
+train loss: 2.077585575889562, evaluation loss: 2.1402647570669675
+steps 1046
+steps 1047
+steps 1048
+steps 1049
+steps 1050
+train loss: 2.069693421744095, evaluation loss: 2.1315762866573453
+saveing model...
+steps 1051
+steps 1052
+steps 1053
+steps 1054
+steps 1055
+train loss: 2.079192525717314, evaluation loss: 2.1660330610305527
+steps 1056
+steps 1057
+steps 1058
+steps 1059
+steps 1060
+train loss: 2.059991094396378, evaluation loss: 2.138622736716853
+steps 1061
+steps 1062
+steps 1063
+steps 1064
+steps 1065
+train loss: 2.06440428178686, evaluation loss: 2.13422817023539
+steps 1066
+steps 1067
+steps 1068
+steps 1069
+steps 1070
+train loss: 2.074186627111037, evaluation loss: 2.1303664138027294
+saveing model...
+steps 1071
+steps 1072
+steps 1073
+steps 1074
+steps 1075
+train loss: 2.0591716406778184, evaluation loss: 2.1236620987601174
+saveing model...
+steps 1076
+steps 1077
+steps 1078
+steps 1079
+steps 1080
+train loss: 2.062277770892984, evaluation loss: 2.1304704880709244
+steps 1081
+steps 1082
+steps 1083
+steps 1084
+steps 1085
+train loss: 2.0622394386546214, evaluation loss: 2.135731983954935
+steps 1086
+steps 1087
+steps 1088
+steps 1089
+steps 1090
+train loss: 2.072554011978375, evaluation loss: 2.2386574210555485
+steps 1091
+steps 1092
+steps 1093
+steps 1094
+steps 1095
+train loss: 2.069542168274364, evaluation loss: 2.2393869407301907
+steps 1096
+steps 1097
+steps 1098
+steps 1099
+steps 1100
+train loss: 2.0540706192698144, evaluation loss: 2.1387468696193643
+steps 1101
+steps 1102
+steps 1103
+steps 1104
+steps 1105
+train loss: 2.0588801765366793, evaluation loss: 2.142838212211412
+steps 1106
+steps 1107
+steps 1108
+steps 1109
+steps 1110
+train loss: 2.0604232159142746, evaluation loss: 2.1469956825827214
+steps 1111
+steps 1112
+steps 1113
+steps 1114
+steps 1115
+train loss: 2.059847392926975, evaluation loss: 2.1412687568602506
+steps 1116
+steps 1117
+steps 1118
+steps 1119
+steps 1120
+train loss: 2.0474207466708916, evaluation loss: 2.1248166827818413
+steps 1121
+steps 1122
+steps 1123
+steps 1124
+steps 1125
+train loss: 2.0454752348045764, evaluation loss: 2.097525171826769
+saveing model...
+steps 1126
+steps 1127
+steps 1128
+steps 1129
+steps 1130
+train loss: 2.0480173189700452, evaluation loss: 2.1033130337396004
+steps 1131
+steps 1132
+steps 1133
+steps 1134
+steps 1135
+train loss: 2.0600706920991803, evaluation loss: 2.1115237120594923
+steps 1136
+steps 1137
+steps 1138
+steps 1139
+steps 1140
+train loss: 2.0483259112336976, evaluation loss: 2.0911575386770584
+saveing model...
+steps 1141
+steps 1142
+steps 1143
+steps 1144
+steps 1145
+train loss: 2.0574765983603376, evaluation loss: 2.204769352705
+steps 1146
+steps 1147
+steps 1148
+steps 1149
+steps 1150
+train loss: 2.05612721997216, evaluation loss: 2.132257096458707
+steps 1151
+steps 1152
+steps 1153
+steps 1154
+steps 1155
+train loss: 2.039721334693449, evaluation loss: 2.132043089830038
+steps 1156
+steps 1157
+steps 1158
+steps 1159
+steps 1160
+train loss: 2.047465959926075, evaluation loss: 2.1148527849402496
+steps 1161
+steps 1162
+steps 1163
+steps 1164
+steps 1165
+train loss: 2.0464125393383363, evaluation loss: 2.111201118536213
+steps 1166
+steps 1167
+steps 1168
+steps 1169
+steps 1170
+train loss: 2.0369819385896077, evaluation loss: 2.1239647266250854
+steps 1171
+steps 1172
+steps 1173
+steps 1174
+steps 1175
+train loss: 2.0438723405803025, evaluation loss: 2.1186355271807313
+steps 1176
+steps 1177
+steps 1178
+steps 1179
+steps 1180
+train loss: 2.0449636241274685, evaluation loss: 2.194740357469049
+steps 1181
+steps 1182
+steps 1183
+steps 1184
+steps 1185
+train loss: 2.041687140340474, evaluation loss: 2.1237429014161164
+steps 1186
+steps 1187
+steps 1188
+steps 1189
+steps 1190
+train loss: 2.0476239379246235, evaluation loss: 2.098612713148856
+steps 1191
+steps 1192
+steps 1193
+steps 1194
+steps 1195
+train loss: 2.040089717946099, evaluation loss: 2.1238347409303024
+steps 1196
+steps 1197
+steps 1198
+steps 1199
+steps 1200
+train loss: 2.0376878248619104, evaluation loss: 2.131349821100871
+steps 1201
+steps 1202
+steps 1203
+steps 1204
+steps 1205
+train loss: 2.0386722284379237, evaluation loss: 2.139070959779548
+steps 1206
+steps 1207
+steps 1208
+steps 1209
+steps 1210
+train loss: 2.0285171793822814, evaluation loss: 2.1612962308201804
+steps 1211
+steps 1212
+steps 1213
+steps 1214
+steps 1215
+train loss: 2.0446777373896245, evaluation loss: 2.093470489134421
+steps 1216
+steps 1217
+steps 1218
+steps 1219
+steps 1220
+train loss: 2.0436501124533293, evaluation loss: 2.1509533469007946
+steps 1221
+steps 1222
+steps 1223
+steps 1224
+steps 1225
+train loss: 2.0325660717768934, evaluation loss: 2.0999195250118374
+steps 1226
+steps 1227
+steps 1228
+steps 1229
+steps 1230
+train loss: 2.034127386800348, evaluation loss: 2.116121834323672
+steps 1231
+steps 1232
+steps 1233
+steps 1234
+steps 1235
+train loss: 2.0372900693936513, evaluation loss: 2.1255513263189494
+steps 1236
+steps 1237
+steps 1238
+steps 1239
+steps 1240
+train loss: 2.034888247115721, evaluation loss: 2.1099753944895934
+steps 1241
+steps 1242
+steps 1243
+steps 1244
+steps 1245
+train loss: 2.022875213722186, evaluation loss: 2.1360520678385484
+steps 1246
+steps 1247
+steps 1248
+steps 1249
+steps 1250
+train loss: 2.039057189131575, evaluation loss: 2.1257297085548403
+steps 1251
+steps 1252
+steps 1253
+steps 1254
+steps 1255
+train loss: 2.032249203438286, evaluation loss: 2.0937228705231994
+steps 1256
+steps 1257
+steps 1258
+steps 1259
+steps 1260
+train loss: 2.024979351487024, evaluation loss: 2.10457517199489
+steps 1261
+steps 1262
+steps 1263
+steps 1264
+steps 1265
+train loss: 2.0222078460169395, evaluation loss: 2.133784703227348
+steps 1266
+steps 1267
+steps 1268
+steps 1269
+steps 1270
+train loss: 2.0229620330447773, evaluation loss: 2.13483264892483
+steps 1271
+steps 1272
+steps 1273
+steps 1274
+steps 1275
+train loss: 2.027005981744863, evaluation loss: 2.1143825279912627
+steps 1276
+steps 1277
+steps 1278
+steps 1279
+steps 1280
+train loss: 2.0170500045453794, evaluation loss: 2.1004242239036834
+steps 1281
+steps 1282
+steps 1283
+steps 1284
+steps 1285
+train loss: 2.0154823579117767, evaluation loss: 2.1191281339317323
+steps 1286
+steps 1287
+steps 1288
+steps 1289
+steps 1290
+train loss: 2.037211775116394, evaluation loss: 2.086810687603134
+saveing model...
+steps 1291
+steps 1292
+steps 1293
+steps 1294
+steps 1295
+train loss: 2.038708381085838, evaluation loss: 2.1339952250652745
+steps 1296
+steps 1297
+steps 1298
+steps 1299
+steps 1300
+train loss: 2.021383380172787, evaluation loss: 2.239080243641312
+steps 1301
+steps 1302
+steps 1303
+steps 1304
+steps 1305
+train loss: 2.029927167490713, evaluation loss: 2.114291256075662
+steps 1306
+steps 1307
+steps 1308
+steps 1309
+steps 1310
+train loss: 2.019140417843979, evaluation loss: 2.0925621350663155
+steps 1311
+steps 1312
+steps 1313
+steps 1314
+steps 1315
+train loss: 2.025503527989712, evaluation loss: 2.0956373543323763
+steps 1316
+steps 1317
+steps 1318
+steps 1319
+steps 1320
+train loss: 2.02045322699161, evaluation loss: 2.1442580123001016
+steps 1321
+steps 1322
+steps 1323
+steps 1324
+steps 1325
+train loss: 2.019259427223271, evaluation loss: 2.100407850012779
+steps 1326
+steps 1327
+steps 1328
+steps 1329
+steps 1330
+train loss: 2.029733124602868, evaluation loss: 2.0908094713053083
+steps 1331
+steps 1332
+steps 1333
+steps 1334
+steps 1335
+train loss: 2.0197636637924563, evaluation loss: 2.112780847713686
+steps 1336
+steps 1337
+steps 1338
+steps 1339
+steps 1340
+train loss: 2.0102841828517635, evaluation loss: 2.1484875602644804
+steps 1341
+steps 1342
+steps 1343
+steps 1344
+steps 1345
+train loss: 2.031404038543553, evaluation loss: 2.075055257948155
+saveing model...
+steps 1346
+steps 1347
+steps 1348
+steps 1349
+steps 1350
+train loss: 2.014556080714073, evaluation loss: 2.1259078216590264
+steps 1351
+steps 1352
+steps 1353
+steps 1354
+steps 1355
+train loss: 2.0072849445926244, evaluation loss: 2.1019484508849793
+steps 1356
+steps 1357
+steps 1358
+steps 1359
+steps 1360
+train loss: 2.024462309135766, evaluation loss: 2.0827506124949506
+steps 1361
+steps 1362
+steps 1363
+steps 1364
+steps 1365
+train loss: 2.0086969797725756, evaluation loss: 2.097490295972527
+steps 1366
+steps 1367
+steps 1368
+steps 1369
+steps 1370
+train loss: 2.016596497779173, evaluation loss: 2.12253413494581
+steps 1371
+steps 1372
+steps 1373
+steps 1374
+steps 1375
+train loss: 2.0131782760048282, evaluation loss: 2.148569601707733
+steps 1376
+steps 1377
+steps 1378
+steps 1379
+steps 1380
+train loss: 2.019429588251717, evaluation loss: 2.0851930568608372
+steps 1381
+steps 1382
+steps 1383
+steps 1384
+steps 1385
+train loss: 2.011820107563002, evaluation loss: 2.113258187214385
+steps 1386
+steps 1387
+steps 1388
+steps 1389
+steps 1390
+train loss: 2.0069583273307017, evaluation loss: 2.1253006594635733
+steps 1391
+steps 1392
+steps 1393
+steps 1394
+steps 1395
+train loss: 2.024400385650572, evaluation loss: 2.118355819171467
+steps 1396
+steps 1397
+steps 1398
+steps 1399
+steps 1400
+train loss: 2.009164052959028, evaluation loss: 2.0684882516181453
+saveing model...
+steps 1401
+steps 1402
+steps 1403
+steps 1404
+steps 1405
+train loss: 2.0041602081531127, evaluation loss: 2.1143122399940766
+steps 1406
+steps 1407
+steps 1408
+steps 1409
+steps 1410
+train loss: 2.0145112386379447, evaluation loss: 2.1270958676178218
+steps 1411
+steps 1412
+steps 1413
+steps 1414
+steps 1415
+train loss: 2.0019896119809437, evaluation loss: 2.1294658076690007
+steps 1416
+steps 1417
+steps 1418
+steps 1419
+steps 1420
+train loss: 1.9921729064789857, evaluation loss: 2.142514194723446
+steps 1421
+steps 1422
+steps 1423
+steps 1424
+steps 1425
+train loss: 2.0299274024502414, evaluation loss: 2.0954254846343963
+steps 1426
+steps 1427
+steps 1428
+steps 1429
+steps 1430
+train loss: 2.008005490934594, evaluation loss: 2.160612884452193
+steps 1431
+steps 1432
+steps 1433
+steps 1434
+steps 1435
+train loss: 2.013652068357999, evaluation loss: 2.1450198680800803
+steps 1436
+steps 1437
+steps 1438
+steps 1439
+steps 1440
+train loss: 1.996758677739886, evaluation loss: 2.0732574279106406
+steps 1441
+steps 1442
+steps 1443
+steps 1444
+steps 1445
+train loss: 2.0095502530652505, evaluation loss: 2.1087199037175957
+steps 1446
+steps 1447
+steps 1448
+steps 1449
+steps 1450
+train loss: 1.9941189582920043, evaluation loss: 2.07174258418865
+steps 1451
+steps 1452
+steps 1453
+steps 1454
+steps 1455
+train loss: 2.008767162129344, evaluation loss: 2.104013724054132
+steps 1456
+steps 1457
+steps 1458
+steps 1459
+steps 1460
+train loss: 1.9976951657935778, evaluation loss: 2.1184658213034275
+steps 1461
+steps 1462
+steps 1463
+steps 1464
+steps 1465
+train loss: 1.999791650476314, evaluation loss: 2.072438771442478
+steps 1466
+steps 1467
+steps 1468
+steps 1469
+steps 1470
+train loss: 2.0121376458043336, evaluation loss: 2.090601016165755
+steps 1471
+steps 1472
+steps 1473
+steps 1474
+steps 1475
+train loss: 1.9986016894546927, evaluation loss: 2.2177061986899878
+steps 1476
+steps 1477
+steps 1478
+steps 1479
+steps 1480
+train loss: 2.001184310967324, evaluation loss: 2.1326139564585023
+steps 1481
+steps 1482
+steps 1483
+steps 1484
+steps 1485
+train loss: 2.0106326612726173, evaluation loss: 2.2063835343742064
+steps 1486
+steps 1487
+steps 1488
+steps 1489
+steps 1490
+train loss: 2.0169319168232684, evaluation loss: 2.067621559035826
+saveing model...
+steps 1491
+steps 1492
+steps 1493
+steps 1494
+steps 1495
+train loss: 2.001528351677809, evaluation loss: 2.126778352359232
+steps 1496
+steps 1497
+steps 1498
+steps 1499
+steps 1500
+train loss: 2.0043969176564724, evaluation loss: 2.1570299136953883
+steps 1501
+steps 1502
+steps 1503
+steps 1504
+steps 1505
+train loss: 2.001783011425662, evaluation loss: 2.2123204301362995
+steps 1506
+steps 1507
+steps 1508
+steps 1509
+steps 1510
+train loss: 2.0001607328459268, evaluation loss: 2.2017408810201675
+steps 1511
+steps 1512
+steps 1513
+steps 1514
+steps 1515
+train loss: 2.0074963295114685, evaluation loss: 2.0928425642011037
+steps 1516
+steps 1517
+steps 1518
+steps 1519
+steps 1520
+train loss: 2.0055287275859386, evaluation loss: 2.095412891285328
+steps 1521
+steps 1522
+steps 1523
+steps 1524
+steps 1525
+train loss: 1.9955607905514015, evaluation loss: 2.0963917240245427
+steps 1526
+steps 1527
+steps 1528
+steps 1529
+steps 1530
+train loss: 1.9929684471941411, evaluation loss: 2.0999340345264557
+steps 1531
+steps 1532
+steps 1533
+steps 1534
+steps 1535
+train loss: 2.0018221783655035, evaluation loss: 2.129857920152473
+steps 1536
+steps 1537
+steps 1538
+steps 1539
+steps 1540
+train loss: 2.0036422370010585, evaluation loss: 2.118379564364031
+steps 1541
+steps 1542
+steps 1543
+steps 1544
+steps 1545
+train loss: 2.0141665398421527, evaluation loss: 2.1066375554900585
+steps 1546
+steps 1547
+steps 1548
+steps 1549
+steps 1550
+train loss: 2.0055026293701586, evaluation loss: 2.107990498505079
+steps 1551
+steps 1552
+steps 1553
+steps 1554
+steps 1555
+train loss: 1.993975772977595, evaluation loss: 2.10015139796526
+steps 1556
+steps 1557
+steps 1558
+steps 1559
+steps 1560
+train loss: 1.9994601891950032, evaluation loss: 2.239254404593244
+steps 1561
+steps 1562
+steps 1563
+steps 1564
+steps 1565
+train loss: 1.9934609839129074, evaluation loss: 2.239321569306355
+steps 1566
+steps 1567
+steps 1568
+steps 1569
+steps 1570
+train loss: 1.993770183056073, evaluation loss: 2.2392194418206937
+steps 1571
+steps 1572
+steps 1573
+steps 1574
+steps 1575
+train loss: 2.003523102826347, evaluation loss: 2.1148843187445223
+steps 1576
+steps 1577
+steps 1578
+steps 1579
+steps 1580
+train loss: 1.9988955533188562, evaluation loss: 2.1189486911682764
+steps 1581
+steps 1582
+steps 1583
+steps 1584
+steps 1585
+train loss: 1.986049308493159, evaluation loss: 2.0673757373620743
+saveing model...
+steps 1586
+steps 1587
+steps 1588
+steps 1589
+steps 1590
+train loss: 2.0043219931030114, evaluation loss: 2.1013720273116134
+steps 1591
+steps 1592
+steps 1593
+steps 1594
+steps 1595
+train loss: 2.0137480480287593, evaluation loss: 2.1305455399913233
+steps 1596
+steps 1597
+steps 1598
+steps 1599
+steps 1600
+train loss: 1.9980127705143746, evaluation loss: 2.0758152015729117
+steps 1601
+steps 1602
+steps 1603
+steps 1604
+steps 1605
+train loss: 1.99634315243249, evaluation loss: 2.119005475531677
+steps 1606
+steps 1607
+steps 1608
+steps 1609
+steps 1610
+train loss: 2.0082154827569973, evaluation loss: 2.0881602977995097
+steps 1611
+steps 1612
+steps 1613
+steps 1614
+steps 1615
+train loss: 1.990491073889718, evaluation loss: 2.2188136255671322
+steps 1616
+steps 1617
+steps 1618
+steps 1619
+steps 1620
+train loss: 1.9911557054579547, evaluation loss: 2.1002528859062704
+steps 1621
+steps 1622
+steps 1623
+steps 1624
+steps 1625
+train loss: 1.991500086701165, evaluation loss: 2.0928619722175053
+steps 1626
+steps 1627
+steps 1628
+steps 1629
+steps 1630
+train loss: 1.9909419418161474, evaluation loss: 2.07992123796823
+steps 1631
+steps 1632
+steps 1633
+steps 1634
+steps 1635
+train loss: 1.9886533441533938, evaluation loss: 2.0597182562171334
+saveing model...
+steps 1636
+steps 1637
+steps 1638
+steps 1639
+steps 1640
+train loss: 1.9832711283972462, evaluation loss: 2.0454560509110054
+saveing model...
+steps 1641
+steps 1642
+steps 1643
+steps 1644
+steps 1645
+train loss: 1.9923251179174646, evaluation loss: 2.0759501998498546
+steps 1646
+steps 1647
+steps 1648
+steps 1649
+steps 1650
+train loss: 2.0009702908373828, evaluation loss: 2.0691934358179056
+steps 1651
+steps 1652
+steps 1653
+steps 1654
+steps 1655
+train loss: 1.9974576134756798, evaluation loss: 2.0956191950257637
+steps 1656
+steps 1657
+steps 1658
+steps 1659
+steps 1660
+train loss: 1.9858203416282953, evaluation loss: 2.2140377608144717
+steps 1661
+steps 1662
+steps 1663
+steps 1664
+steps 1665
+train loss: 1.9949434956825312, evaluation loss: 2.221920614968073
+steps 1666
+steps 1667
+steps 1668
+steps 1669
+steps 1670
+train loss: 1.9981204233733223, evaluation loss: 2.0578223590560936
+steps 1671
+steps 1672
+steps 1673
+steps 1674
+steps 1675
+train loss: 1.9859100896810447, evaluation loss: 2.1345539483928397
+steps 1676
+steps 1677
+steps 1678
+steps 1679
+steps 1680
+train loss: 1.9810942516588959, evaluation loss: 2.1343257662709103
+steps 1681
+steps 1682
+steps 1683
+steps 1684
+steps 1685
+train loss: 1.9882148891880955, evaluation loss: 2.0475772316256773
+steps 1686
+steps 1687
+steps 1688
+steps 1689
+steps 1690
+train loss: 1.9780580545021884, evaluation loss: 2.0704152698247813
+steps 1691
+steps 1692
+steps 1693
+steps 1694
+steps 1695
+train loss: 1.9892555302177084, evaluation loss: 2.0558745959059643
+steps 1696
+steps 1697
+steps 1698
+steps 1699
