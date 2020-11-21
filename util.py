@@ -146,8 +146,8 @@ class TUTDataset(data.Dataset):
         Return:
             all_events: a list of all events, every element is a dict storing name, start, end, ele, azi, etc. of a event.
         '''
-        sed_tensor = sed_tensor.numpy()
-        doa_tensor = doa_tensor.numpy()
+        sed_tensor = sed_tensor.cpu().numpy()
+        doa_tensor = doa_tensor.cpu().numpy()
         all_events = []
         current_idx = set([])
         onset = {}
@@ -158,14 +158,12 @@ class TUTDataset(data.Dataset):
             idx = set(np.where(sed_tensor[i,:]>0.5)[0])
             # open new events
             for v in idx:
-                if v not in current_idx:
-                    current_idx.add(v)
+                if v not in onset:
                     onset[v] = i
             # close old events
-            tmp = current_idx.copy()
-            for v in current_idx:
+            tmp = onset.copy()
+            for v in tmp.keys():
                 if v not in idx:
-                    tmp.remove(v)
                     startp = onset.pop(v)
                     endp = i
                     start = ((startp-1)*self.frame_shift+self.frame_len)/self.sample_freq
@@ -193,9 +191,38 @@ class TUTDataset(data.Dataset):
                         "ele":ele*180/math.pi,
                         "azi":azi*180/math.pi
                     })
-            current_idx = tmp
         # events continuing to audio end
-        i = N
+        i = N-1
+        tmp = onset.copy()
+        print(onset)
+        for v in tmp.keys():
+            startp = onset.pop(v)
+            endp = i
+            start = ((startp-1)*self.frame_shift+self.frame_len)/self.sample_freq
+            end = ((endp-1)*self.frame_shift+self.frame_len)/self.sample_freq
+            x = np.mean(doa_tensor[startp:endp,v*3])
+            y = np.mean(doa_tensor[startp:endp,v*3+1])
+            z = np.mean(doa_tensor[startp:endp,v*3+2])
+            r = math.sqrt(x*x+y*y+z*z)
+            if r<1e-5:
+                ele=0
+                azi=0
+            else:
+                ele = math.asin(z/r)
+                azi = math.acos(max(min(x/(r*math.cos(ele)),1),-1))
+                if y<0:
+                    azi = -azi
+            all_events.append({
+                "idx":v,
+                "event":self.idx2name[v],
+                "start":start,
+                "end":end,
+                "x":x,
+                "y":y,
+                "z":z,
+                "ele":ele*180/math.pi,
+                "azi":azi*180/math.pi
+            })
         
         return all_events
     
@@ -218,6 +245,7 @@ class TUTDataset(data.Dataset):
                 idx = self.name2idx[name]
                 start = float(row['start_time'])
                 end = float(row['end_time'])
+                dist = float(row['dist'])
                 sp = int(start*self.sample_freq)
                 if sp<1024:
                     sp = 0
@@ -232,7 +260,7 @@ class TUTDataset(data.Dataset):
                 azi = float(row['azi'])*np.pi/180
 
                 sed[sp:ep] = idx
-                doa[sp:ep,idx*3:(idx*3+3)] = np.array([[np.cos(ele)*np.cos(azi),np.cos(ele)*np.sin(azi),np.sin(ele)]])
+                doa[sp:ep,idx*3:(idx*3+3)] = np.array([[np.cos(ele)*np.cos(azi),np.cos(ele)*np.sin(azi),np.sin(ele)]])*dist
 
         return (sed,doa)
     def __len__(self):
@@ -243,3 +271,4 @@ if __name__ == "__main__":
     loader = data.DataLoader(tutdata,batch_size=8,shuffle=False)
     for v,k,d in loader:
         print(v.shape)
+        print(d)

@@ -8,6 +8,7 @@ import torch.utils.data as data
 
 from util import TUTDataset
 from model import SELDNet
+from pprint import pprint
 
 import argparse
 import sys
@@ -28,8 +29,13 @@ def train(args):
     tutdata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100,split_set=SPLIT_SET,ir_set=IR_SET,ov_set=OV_SET)
     tutloader = data.DataLoader(tutdata,batch_size=args.batch_size,shuffle=True)
     evaldata = TUTDataset("data/mic_dev","data/metadata_dev",sample_freq=44100,split_set=["split3"],ir_set=IR_SET,ov_set=OV_SET)
-    evalloader = iter(data.DataLoader(evaldata,batch_size=args.batch_size,shuffle=True))
+    evalloader = iter(data.DataLoader(evaldata,batch_size=args.batch_size,shuffle=False))
     sample_eval, sed_eval, doa_eval = next(evalloader)
+    # !!已验证单解码函数在eval数据上工作正常
+    tmp = torch.zeros((4,5160,12)).scatter_(2,sed_eval.unsqueeze(2),1)
+    print(tmp.shape)
+    print(sed_eval.shape,doa_eval.shape)
+    pprint(tutdata.decode_one(tmp[0],doa_eval[0]))
     sample_eval = sample_eval.to(device)
     sed_eval = sed_eval.to(device)
     doa_eval = doa_eval.to(device)
@@ -63,6 +69,7 @@ def train(args):
             loss = loss_sed+loss_doa
             train_loss_sum += float(loss)
             loss.backward()
+            nn.utils.clip_grad_norm_(model.parameters(),2) # 防止梯度爆炸
             optimizer.step()
 
             # evaluation
@@ -70,6 +77,7 @@ def train(args):
                 model.eval()
                 with torch.no_grad():
                     out_sed,out_doa = model(sample_eval)
+                    pprint(tutdata.decode_one(out_sed[0],out_doa[0]))
                     out_sed = out_sed.reshape(-1,tutdata.num_class)
                     sed_eval = sed_eval.reshape(-1)
                     loss_sed = criterion_sed(out_sed,sed_eval)
@@ -79,7 +87,7 @@ def train(args):
                     if float(loss)<min_loss:
                         print("saveing model...")
                         min_loss = float(loss)
-                        torch.save(model.state_dict(),"SELDNet-best.ckpt")
+                        torch.save(model.state_dict(),"SELDNet-best2.ckpt")
                     train_loss_sum = 0
                 model.train()
 
