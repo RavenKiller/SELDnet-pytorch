@@ -8,7 +8,7 @@ import numpy as np
 import os
 import csv
 import math
-def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5160):
+def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel_first=True,drop_dc=True,cut_len=5160,normalize=False):
     '''
     获取一个音频的对数DFT频谱
     
@@ -20,6 +20,7 @@ def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel
         channel_first: whether to put channels in first dimension
         drop_dc: whether to drop DC component in spectrum (frequency==0)
         cut_len: keep the fix number of points in time axis
+        normalize: 观察发现能量很小，对数能量在-100的数量级，有必要处理一下
         
     Return:
         (log_power_spectrum, phase_spectrum):能量谱与相位谱相叠形成的tensor
@@ -52,7 +53,12 @@ def getDFTFeature(filepath,win_size=1024,win_shift=512,preemphasis=False,channel
         fft = fft[:,:,1:]
     fft = fft[:,:cut_len,:]
     power_spectrum = fft.pow(2).sum(3)
-    log_power_spectrum = np.log10(power_spectrum)*10
+    log_power_spectrum = torch.log10(power_spectrum)*10
+    # 对于能量谱正则化处理
+    mean_vec = log_power_spectrum.mean(axis=1,keepdim=True)
+    std_vec = log_power_spectrum.std(axis=1,keepdim=True)
+    log_power_spectrum = (log_power_spectrum-mean_vec)/std_vec
+    # 
     phase_spectrum = fft[:,:,:,0]/fft.pow(2).sum(3).sqrt()
     
     phase_spectrum = torch.acos(phase_spectrum)
