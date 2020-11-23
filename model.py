@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from util import getDFTFeature
 
 class SELDNet(nn.Module):
-    def __init__(self,C=4,P=16,Q=16,R=16,K=10,feature_dim=512,cnn_layers=3,rnn_layers=2):
+    def __init__(self,C=4,P=16,Q=16,R=16,K=10,feature_dim=512,cnn_layers=3,rnn_layers=1):
         super().__init__()
         self.C = C # the number of audio channels
         self.P = P # the number of feature maps
@@ -32,8 +32,8 @@ class SELDNet(nn.Module):
         ##########################################
         # RNN part
         ##########################################
-        # self.grus = nn.GRU(input_size=2*P,hidden_size=Q,num_layers=rnn_layers,batch_first=True,bidirectional=True)
-        # self.add_module("grus",self.grus)
+        self.grus = nn.GRU(input_size=2*P,hidden_size=Q,num_layers=rnn_layers,batch_first=True,bidirectional=True)
+        self.add_module("grus",self.grus)
 
 
         ##########################################
@@ -70,8 +70,8 @@ class SELDNet(nn.Module):
         y = y.permute(0,2,3,1) # shape(N,T,2,P)
         y = y.contiguous().view(y.shape[0],y.shape[1],-1) # shape (N,T,2*P)
         # h0 = torch.rand((2*self.rnn_layers,y.shape[0],self.Q)).cuda()
-        # y, _ = self.grus(y) # shape(N,T,2*Q)
-        # y = torch.tanh(y) # shape(N,T,2*Q)
+        y, _ = self.grus(y) # shape(N,T,2*Q)
+        y = torch.tanh(y) # shape(N,T,2*Q)
 
         sed_y = torch.sigmoid(self.sed_fc1(self.sed_fc0(y)))
         doa_y = torch.tanh(self.doa_fc1(self.doa_fc0(y)))

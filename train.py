@@ -91,7 +91,7 @@ def train(args):
                     if float(loss)<min_loss:
                         print("saveing model...")
                         min_loss = float(loss)
-                        torch.save(model.state_dict(),"SELDNet-best2.ckpt")
+                        torch.save(model.state_dict(),"SELDNet-best3.ckpt")
                     train_loss_sum = 0
                 model.train()
 
